@@ -24,45 +24,61 @@
   import { ref, onMounted } from 'vue';
   import { useSupabase } from '../composables/useSupabase';
   
-  const email = ref('');
-  const password = ref('');
+  // Assuming these are already declared correctly
+  const title = ref('');
+  const content = ref('');
+  const posts = ref([]);
   const user = ref(null);
   
   const supabase = useSupabase();
   
-  const handleSignUp = async () => {
-    const { error, data } = await supabase.auth.signUp({
-      email: email.value,
-      password: password.value
-    });
-    if (error) console.error('Signup Error:', error.message);
-    user.value = data.user;
-  };
+  const addPost = async () => {
+    try {
+      // Log input values and user ID to see what's being submitted
+      console.log('Attempting to add post:', {
+        title: title.value,
+        content: content.value,
+        user_id: user.value?.id
+      });
   
-  const handleSignIn = async () => {
-    const { error, data } = await supabase.auth.signInWithPassword({
-      email: email.value,
-      password: password.value
-    });
-    if (error) console.error('Signin Error:', error.message);
-    user.value = data.user;
-  };
+      // Attempt to insert the post
+      const { data, error } = await supabase.from('posts').insert([{ 
+        title: title.value, 
+        content: content.value, 
+        user_id: user.value?.id 
+      }]);
   
-  const handleSignOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) console.error('Signout Error:', error.message);
-    user.value = null;
+      // Log the response from Supabase to check for issues
+      console.log('Supabase response:', data, error);
+  
+      if (error) throw error;
+  
+      // Update posts value if a new post is successfully added
+      posts.value.push(...data);
+    } catch (err) {
+      console.error('Error adding post:', err.message);
+    }
   };
+
+
   
   onMounted(async () => {
-    // Fetch the current session
-    const { data, error } = await supabase.auth.getSession();
-    if (error) console.error('Get session error:', error.message);
-    user.value = data.session?.user || null;
+    // Existing initialization code to fetch posts and session
+    const { data, error } = await supabase.from('posts').select('*');
+    if (error) console.error('Error fetching posts:', error);
+    else posts.value = data;
   
-    // Listen for authentication state changes
+    try {
+      const sessionResponse = await supabase.auth.getSession();
+      user.value = sessionResponse.data.session?.user || null;
+    } catch (err) {
+      console.error('Get session error:', err.message);
+    }
+  
+    // Same listener for authentication state changes
     supabase.auth.onAuthStateChange((_event, session) => {
       user.value = session?.user || null;
     });
   });
   </script>
+  
