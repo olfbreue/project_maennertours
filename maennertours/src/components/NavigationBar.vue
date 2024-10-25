@@ -47,6 +47,9 @@ export default {
 <style>
 .navbar-expand-lg-height-5rem {
   height: 5.5rem;
+  background-image: url("..\assets\tarmac.png") ;
+  border-top: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
 }
 .logo {
  
