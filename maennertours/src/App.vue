@@ -1,10 +1,14 @@
 <script setup>
+//import { createApp } from 'vue';
+import App from './App.vue';
 import { RouterLink, RouterView } from 'vue-router';
+import router from './router';
 import UpperPart from './components/UpperPart.vue';
 import NavigationBar from './components/NavigationBar.vue';
 import Carousel from './components/Carousel.vue';
 import HomeView from './views/HomeView.vue';
 
+//createApp(App).use(router).mount('#app');
 
 </script>
 
@@ -15,19 +19,15 @@ import HomeView from './views/HomeView.vue';
   <NavigationBar></NavigationBar>
   <!--<Carousel></Carousel>  -->
   <HomeView></HomeView>
+
   <div class="container-fluid">
 
    
       <div class="row">
-       <!-- <img src='@/assets/tarmac.png' class="d-block w-100" alt="tarmac"> -->
-        <div class="col-lg-3">
-        </div>
-        <div class="col-lg-2"></div>
-
         <div class="col-lg-3"></div>
-        <div class="col-lg-4" >
-          
-        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-4" ></div>
       </div>
    
 

@@ -6,19 +6,17 @@
   </div>
 </div>
 
-
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style scope>
+
 .bg-image {
-  background-image: url(../assets/Balkantour_cut_bw.jpg);
+  background-image: url(../assets/Balkantour_cut_bw2.jpg);
   background-size: cover;
   background-position: center;
-  height: 30vh; /* or any other height you want */
+  height: 25vh; /* or any other height you want */
   position: relative;
 }
 
@@ -35,4 +33,5 @@ img {
   width: 80%;
   height:80%;
 }
+
 </style>

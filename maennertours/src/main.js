@@ -1,16 +1,25 @@
-
-import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import App from './App.vue'
-import router from './router'
+import App from './App.vue';
+import router from './router';
 
-const app = createApp(App)
+import { createI18n } from 'vue-i18n';
+import translations from './translations.js';
 
-app.use(createPinia())
-app.use(router)
+const i18n = createI18n({
+  legacy: false,
+  globalInjection: true,
+  locale: 'en',
+  fallbackLocale: 'en',
+  messages: translations,
+});
 
-app.mount('#app')
+const app = createApp(App);
+app.use(i18n);
+app.use(createPinia());
+app.use(router);
+app.mount('#app');
