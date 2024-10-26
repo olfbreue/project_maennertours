@@ -2,7 +2,7 @@
   <div>
     <div v-if="user">
       <input v-model="title" placeholder="Title" />
-
+      
       <div class="toolbar">
         <button @click="toggleBold" :class="{ active: editor.isActive('bold') }">Bold</button>
         <button @click="toggleItalic" :class="{ active: editor.isActive('italic') }">Italic</button>
@@ -18,11 +18,18 @@
       <p>Please sign in to create posts.</p>
     </div>
 
+    <!-- Post list always visible -->
     <ul>
       <li v-for="post in posts" :key="post.id">
         <h3>{{ post.title }}</h3>
         <div class="post-content" v-html="post.content"></div>
         <p>{{ post.date }}</p>
+
+       <!--
+        <h3 v-if="!user">{{ post.title }}</h3>
+        <div  v-if="!user" class="post-content" v-html="post.content"></div>
+        <p  v-if="!user">{{ post.date }}</p> --> 
+
         <button v-if="user" @click="editPost(post)">Edit</button>
         <button v-if="user" @click="deletePost(post.id)">Delete</button>
       </li>
@@ -31,14 +38,14 @@
 </template>
 
 <script setup>
-// Import and ensure the Supabase composable is used for accessing the client
 import { ref, onMounted } from 'vue';
 import { EditorContent, useEditor } from '@tiptap/vue-3';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
-import { useSupabase } from '../composables/useSupabase'; // Make sure this path is correct
+import { useSupabase } from '../composables/useSupabase';
 
-const supabase = useSupabase(); // Initialize Supabase client
+// Check if the client is initialized
+const supabase = useSupabase();
 
 const title = ref('');
 const posts = ref([]);
@@ -51,24 +58,11 @@ const editor = useEditor({
   content: ''
 });
 
-// Toolbar functionality
-const toggleBold = () => {
-  editor.value?.chain().focus().toggleBold().run();
-}
+const toggleBold = () => editor.value?.chain().focus().toggleBold().run();
+const toggleItalic = () => editor.value?.chain().focus().toggleItalic().run();
+const toggleStrike = () => editor.value?.chain().focus().toggleStrike().run();
+const toggleCode = () => editor.value?.chain().focus().toggleCode().run();
 
-const toggleItalic = () => {
-  editor.value?.chain().focus().toggleItalic().run();
-}
-
-const toggleStrike = () => {
-  editor.value?.chain().focus().toggleStrike().run();
-}
-
-const toggleCode = () => {
-  editor.value?.chain().focus().toggleCode().run();
-}
-
-// Upload and insert image
 const insertImage = async (event) => {
   const files = event.target.files;
   if (!files || !files[0]) return;
@@ -91,7 +85,6 @@ const insertImage = async (event) => {
   }
 };
 
-// Fetch posts from Supabase
 const fetchPosts = async () => {
   try {
     const { data, error } = await supabase.from('posts').select('*');
