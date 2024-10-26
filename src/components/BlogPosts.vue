@@ -1,11 +1,18 @@
-
 <template>
   <div>
     <div v-if="user">
       <input v-model="title" placeholder="Title" />
-      <!-- TipTap Editor -->
-      <editor-content class="tiptap-editor":editor="editor" />
-      <button @click="addPost">Add Post</button>
+
+      <div class="toolbar">
+        <button @click="toggleBold" :class="{ active: editor.isActive('bold') }">Bold</button>
+        <button @click="toggleItalic" :class="{ active: editor.isActive('italic') }">Italic</button>
+        <button @click="toggleStrike" :class="{ active: editor.isActive('strike') }">Strike</button>
+        <button @click="toggleCode" :class="{ active: editor.isActive('code') }">Code</button>
+        <input type="file" @change="insertImage" accept="image/*" />
+      </div>
+
+      <editor-content class="tiptap-editor" :editor="editor" />
+      <button @click="commitPost">{{ isEditing ? 'Update Post' : 'Add Post' }}</button>
     </div>
     <div v-else>
       <p>Please sign in to create posts.</p>
@@ -14,39 +21,77 @@
     <ul>
       <li v-for="post in posts" :key="post.id">
         <h3>{{ post.title }}</h3>
-        <div v-html="post.content"></div>
+        <div class="post-content" v-html="post.content"></div>
         <p>{{ post.date }}</p>
-        <button @click="editPost(post)">Edit</button>
-        <button @click="deletePost(post.id)">Delete</button>
+        <button v-if="user" @click="editPost(post)">Edit</button>
+        <button v-if="user" @click="deletePost(post.id)">Delete</button>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup>
+// Import and ensure the Supabase composable is used for accessing the client
 import { ref, onMounted } from 'vue';
 import { EditorContent, useEditor } from '@tiptap/vue-3';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
-import { useSupabase } from '../composables/useSupabase';
+import { useSupabase } from '../composables/useSupabase'; // Make sure this path is correct
+
+const supabase = useSupabase(); // Initialize Supabase client
 
 const title = ref('');
 const posts = ref([]);
 const user = ref(null);
+const isEditing = ref(false);
+const editingPostId = ref(null);
 
 const editor = useEditor({
   extensions: [StarterKit, Image],
-  content: '',
-  onCreate: () => {
-    console.log('Editor initialized');
-  },
-  onUpdate: ({ editor }) => {
-    console.log('Editor content:', editor.getHTML());
-  }
+  content: ''
 });
 
-const supabase = useSupabase();
+// Toolbar functionality
+const toggleBold = () => {
+  editor.value?.chain().focus().toggleBold().run();
+}
 
+const toggleItalic = () => {
+  editor.value?.chain().focus().toggleItalic().run();
+}
+
+const toggleStrike = () => {
+  editor.value?.chain().focus().toggleStrike().run();
+}
+
+const toggleCode = () => {
+  editor.value?.chain().focus().toggleCode().run();
+}
+
+// Upload and insert image
+const insertImage = async (event) => {
+  const files = event.target.files;
+  if (!files || !files[0]) return;
+
+  const formData = new FormData();
+  formData.append('file', files[0]);
+
+  try {
+    const response = await fetch('http://localhost:5000/upload', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (!response.ok) throw new Error(`Upload failed: ${response.statusText}`);
+
+    const { imageUrl } = await response.json();
+    editor.value?.chain().focus().setImage({ src: imageUrl }).run();
+  } catch (error) {
+    console.error('Error uploading image:', error.message);
+  }
+};
+
+// Fetch posts from Supabase
 const fetchPosts = async () => {
   try {
     const { data, error } = await supabase.from('posts').select('*');
@@ -57,34 +102,47 @@ const fetchPosts = async () => {
   }
 };
 
-const addPost = async () => {
+// Add or update post
+const commitPost = async () => {
   try {
-    if (!editor.value) {
-      throw new Error('Editor is not initialized yet.');
-    }
-
-    // Retrieve content using the current editor instance
     const editorContent = editor.value.getHTML();
 
-    const { data, error } = await supabase.from('posts').insert([
-      {
-        title: title.value,
-        content: editorContent,
-        user_id: user.value?.id
+    if (isEditing.value) {
+      const { data, error } = await supabase.from('posts')
+        .update({ title: title.value, content: editorContent })
+        .eq('id', editingPostId.value);
+
+      if (error) throw error;
+
+      const index = posts.value.findIndex(p => p.id === editingPostId.value);
+      if (index !== -1) {
+        posts.value[index] = { ...data[0] };
       }
-    ]).select();
 
-    if (error) throw error;
+      isEditing.value = false;
+      editingPostId.value = null;
+    } else {
+      const { data, error } = await supabase.from('posts').insert([
+        {
+          title: title.value,
+          content: editorContent,
+          user_id: user.value?.id
+        }
+      ]).select();
 
-    posts.value.push(...data);
+      if (error) throw error;
+
+      posts.value.push(...data);
+    }
 
     title.value = '';
-    editor.value.commands.clearContent(); // Resetting using the editor instance
+    editor.value.commands.clearContent();
   } catch (err) {
-    console.error('Error adding post:', err.message);
+    console.error('Error committing post:', err.message);
   }
 };
 
+// Delete post
 const deletePost = async (postId) => {
   try {
     const { error } = await supabase.from('posts').delete().eq('id', postId);
@@ -95,33 +153,15 @@ const deletePost = async (postId) => {
   }
 };
 
+// Edit post
 const editPost = (post) => {
   title.value = post.title;
   editor.commands.setContent(post.content);
-
-  const updatePost = async () => {
-    try {
-      const { data, error } = await supabase.from('posts')
-        .update({ title: title.value, content: editor.getHTML() })
-        .eq('id', post.id);
-
-      if (error) throw error;
-
-      const index = posts.value.findIndex(p => p.id === post.id);
-      if (index !== -1) {
-        posts.value[index] = { ...post, ...data[0] };
-      }
-
-      title.value = '';
-      editor.commands.clearContent();
-    } catch (err) {
-      console.error('Error updating post:', err.message);
-    }
-  };
-
-  addPost = updatePost;
+  isEditing.value = true;
+  editingPostId.value = post.id;
 };
 
+// Initial setup for authentication and fetching posts
 onMounted(async () => {
   await fetchPosts();
 
@@ -139,11 +179,27 @@ onMounted(async () => {
 </script>
 
 <style>
-
-
+/* Basic styling to ensure the editor and its contents are visible */
 .tiptap-editor {
-  border: 1px solid #ccc; /* Adds a border to see the editor's boundaries */
-  min-height: 150px; /* Ensures there's some height to make the editor visible */
+  border: 1px solid #ccc;
+  min-height: 150px;
   padding: 10px;
+}
+
+.post-content img {
+  width: 540px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.toolbar {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+button.active {
+  background-color: #ddd;
 }
 </style>
