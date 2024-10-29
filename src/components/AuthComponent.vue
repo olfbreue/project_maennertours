@@ -3,8 +3,8 @@
     <div>
       <input v-model="email" placeholder="Email" />
       <input v-model="password" placeholder="Password" type="password" />
-      <button @click="handleSignUp"  v-if="!user">Sign Up</button>
-      <button @click="handleSignIn"  v-if="!user">Sign In</button>
+      <button @click="handleSignUp"  v-if="!isLoggedIn">Sign Up</button>
+      <button @click="handleSignIn"  v-if="!isLoggedIn">Sign In</button>
       <button @click="handleSignOut" v-if="isLoggedIn">Sign Out</button>
       <p v-if="user">Signed in as: {{ user.email }}</p>
     </div>
