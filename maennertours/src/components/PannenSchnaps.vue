@@ -65,6 +65,6 @@ watch(locale, () => {
   border-radius: 10px 80px 10px 80px;
   padding: 40px;
   text-align: center;
-  /*border: 1px solid #727272;*/
+  border: 1px solid #727272;
 }
 </style>

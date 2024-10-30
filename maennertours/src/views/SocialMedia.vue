@@ -2,7 +2,8 @@
 import SimpleCard from '../components/SimpleCard.vue';
 import { useI18n } from 'vue-i18n';
 import { ref, watch } from 'vue';
-import PannenSchnaps from '@/components/PannenSchnaps.vue';
+import YouTube from '@/components/YouTube.vue';
+import InstaGram from '@/components/InstaGram.vue';
 
 const { t, locale } = useI18n();
 const translatedMessage = ref(t('message.aboutText'));
@@ -18,34 +19,14 @@ watch(locale, () => {
 </script>
 
 <template>
-  <div class="bg-image rounded-3">
-    <div class="container-fluid">
-      <div class="row" style="height: 400px;">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-5">
-          <div class="fs-3">
-            {{ translatedMessage }}
-          </div>
-        </div>
-        <div class="col-lg-1"></div>
-        <div class="col-lg-4 border-light">
-          <SimpleCard
-            :title="videoTitle"
-            :text="videoText"
-            btntext="Click Me"
-            btnlink="https://example.com"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <PannenSchnaps></PannenSchnaps>
+    <YouTube></YouTube>
+    <InstaGram></InstaGram> 
 </template>
 
 <style scoped>
 .bg-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                    url(../assets/middle_of_the_road.jpg);
+                    url(../assets/challenges.JPG);
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -57,7 +38,7 @@ watch(locale, () => {
   z-index: 1000;
   padding-top: 8%;
 }
-.col-lg-5 {
+.col-lg-4 {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
   padding: 40px;

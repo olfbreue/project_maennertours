@@ -20,70 +20,25 @@ import YouTube from './components/YouTube.vue';
 <template>
  
   <UpperPart></UpperPart>
-  <NavigationBar></NavigationBar>
- 
-  <div class="m-2 rounded">
-    <HomeView></HomeView>
+
+  <RouterView></RouterView>
+   <!--<div class="m-2 rounded">
+   <HomeView></HomeView>
   </div>
-  <!--<VehiclesView></VehiclesView> -->
+  <VehiclesView></VehiclesView> 
   <div class="m-2 rounded">
     <PannenSchnaps></PannenSchnaps>
     <YouTube></YouTube>
-    <!-- <Carousel></Carousel>   -->
-  </div>
-  <div class="row">
-        <div class="col-lg-4" ></div>
-        <div class="col-lg-8 ms-auto">
-          <iframe src="https://www.instagram.com/maennertours/embed" height="750" width="800"></iframe>
-        </div>
-        
-      </div>
-      <div class="row">
-        <div class="col-lg-4" >
-         
-
-        </div>
-        <div class="col-lg-8 ms-auto">
-
-                        
-        </div>
-        
-      </div>
+     <Carousel></Carousel>   
+  </div> -->
+  
  <!-- <TourList></TourList> -->
-  <div class="container-fluid">
 
-   
-      <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-3"></div>
-        <div class="col-lg-4" ></div>
-      </div>
-   
-
-    <div class="row" style="height: 400px;">
-      <div class="col-lg-3">Left Column</div>
-      <div class="col-lg-6">Middle Column</div>
-      <div class="col-lg-3">Right Column</div>
-    </div>
-
-    <div class="row" style="height: 100px;">
-      <div class="col-lg-3">Footer Left</div>
-      <div class="col-lg-6">Footer Middle</div>
-      <div class="col-lg-3">Footer Right</div>
-    </div>
-
-  </div>
 </template>
 
 
 <style scoped>
 
-iframe{
-  background-color: black);
-  border-radius: 10px;
-  margin-left: 10px;
- 
-}
+
 
 </style>

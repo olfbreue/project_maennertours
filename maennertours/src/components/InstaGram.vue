@@ -4,15 +4,13 @@ import { ref, watch } from 'vue';
 
 
 const { t, locale } = useI18n();
-const translatedMessage = ref(t('message.aboutText'));
-const btntextShop = ref(t('message.btntextShop'));
-const youTubeCardText = ref(t('message.youTubeCardText'));
+const instaText = ref(t('message.instaText'));
 
 // Watch the locale and update the translated message and video title whenever it changes
 watch(locale, () => {
 
-  youTubeCardText.value = t('message.youTubeCardText');
-  btntextShop.value = t('message.btntextShop');
+  
+    instaText.value = t('message.instaText');
 });
 </script>
 
@@ -23,25 +21,20 @@ watch(locale, () => {
         <div class="col-lg-2"></div>
         <div class="col-lg-4" >
           <div class="fs-4">
-            {{ youTubeCardText }}
+            {{ instaText }}
           </div>
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-4">
-          <ul class="list-group overflow-auto">
-            <li v-for="index in 12" :key="index" class="list-group-item">
-      <iframe
-        width="412"
-        height="225"
-        :src="`https://www.youtube.com/embed?listType=playlist&list=PL_u1YUflUcHZwdUQsTEtUtziSBu4toNYm&index=${index}`"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-    </li>
-</ul>
+         
+            <iframe 
+    src="https://www.instagram.com/maennertours/embed" 
+    height="470" 
+    width="400"
+    frameborder="0"
+    scrolling="no"
+    class="instagram-frame"
+  ></iframe>
            
         </div>
       </div>
@@ -81,5 +74,16 @@ watch(locale, () => {
 .list-group-item{
   background-color: #272626e6;
   align-self: auto;
+}
+.instagram-frame {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: hidden;
+  border: none;
+  border-radius:10px;
+}
+
+.instagram-frame::-webkit-scrollbar {
+  display: none;
 }
 </style>

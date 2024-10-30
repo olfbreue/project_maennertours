@@ -1,4 +1,5 @@
 <script setup>
+
 import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
 
@@ -22,7 +23,13 @@ changeLanguage('de');
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mx-4 mb-lg-0 ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link active" aria-current="page" to="/SocialMedia">Social Media</router-link>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Shop</a>
@@ -65,7 +72,7 @@ changeLanguage('de');
   background-image: url("../assets/tarmac.png");
   border-top: 1px solid #c0c0c0;
   border-bottom: 1px solid #c0c0c0;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 .logo {
   margin: 0 auto 2rem;

@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-bg-dark mb-3" style="width: 18rem;">
+  <div class="card text-bg-dark mb-3" style="width: 23rem;">
   <img src="../assets/trailerStill.png" class="card-img-top" alt="maenner foto">
   <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
@@ -20,6 +20,11 @@ const props = defineProps({
 });
 </script>
 
-<style>
+<style scoped>
+.card{
+  border-radius: 10px;
+  border: 1px solid #727272;
+  box-shadow: -2px 2px 2px 2px rgba(244, 244, 244, 0.274);
 
+}
 </style>
