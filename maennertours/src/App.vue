@@ -7,6 +7,10 @@ import UpperPart from './components/UpperPart.vue';
 import NavigationBar from './components/NavigationBar.vue';
 import Carousel from './components/Carousel.vue';
 import HomeView from './views/HomeView.vue';
+import VehiclesView from './views/VehiclesView.vue';
+import TourList from './components/TourList.vue';
+import PannenSchnaps from './components/PannenSchnaps.vue';
+import YouTube from './components/YouTube.vue';
 
 //createApp(App).use(router).mount('#app');
 
@@ -17,9 +21,35 @@ import HomeView from './views/HomeView.vue';
  
   <UpperPart></UpperPart>
   <NavigationBar></NavigationBar>
-  <!--<Carousel></Carousel>  -->
-  <HomeView></HomeView>
+ 
+  <div class="m-2 rounded">
+    <HomeView></HomeView>
+  </div>
+  <!--<VehiclesView></VehiclesView> -->
+  <div class="m-2 rounded">
+    <PannenSchnaps></PannenSchnaps>
+    <YouTube></YouTube>
+    <!-- <Carousel></Carousel>   -->
+  </div>
+  <div class="row">
+        <div class="col-lg-4" ></div>
+        <div class="col-lg-8 ms-auto">
+          <iframe src="https://www.instagram.com/maennertours/embed" height="750" width="800"></iframe>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-lg-4" >
+         
 
+        </div>
+        <div class="col-lg-8 ms-auto">
+
+                        
+        </div>
+        
+      </div>
+ <!-- <TourList></TourList> -->
   <div class="container-fluid">
 
    
@@ -49,6 +79,11 @@ import HomeView from './views/HomeView.vue';
 
 <style scoped>
 
-
+iframe{
+  background-color: black);
+  border-radius: 10px;
+  margin-left: 10px;
+ 
+}
 
 </style>

@@ -1,12 +1,13 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
-
 const { locale } = useI18n();
 
 function changeLanguage(lang) {
   locale.value = lang;
   console.log("Language:" + lang);
 }
+changeLanguage('de');
+
 </script>
 
 <template>
@@ -19,12 +20,18 @@ function changeLanguage(lang) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+        <ul class="navbar-nav mb-2 mx-4 mb-lg-0 ms-auto">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Kontakt</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tour-Tracker</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,9 +52,7 @@ function changeLanguage(lang) {
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
+         
         </ul>
       </div>
     </div>
@@ -60,14 +65,14 @@ function changeLanguage(lang) {
   background-image: url("../assets/tarmac.png");
   border-top: 1px solid #c0c0c0;
   border-bottom: 1px solid #c0c0c0;
+  padding-top: 30px;
 }
 .logo {
   margin: 0 auto 2rem;
-  height: 220px;
-  width: 220px;
+  height: 260px;
+  width: 260px;
   position: relative;
-  top: 20px;
-  margin-left: 30px;
+  margin-left: 80px;
   margin-right: 30px;
   z-index: 1000;
 }
