@@ -4,13 +4,13 @@ import { ref, watch } from 'vue';
 
 
 const { t, locale } = useI18n();
-const instaText = ref(t('message.instaText'));
+const FacebookText = ref(t('message.FacebookText'));
 
 // Watch the locale and update the translated message and video title whenever it changes
 watch(locale, () => {
 
   
-    instaText.value = t('message.instaText');
+  FacebookText.value = t('message.FacebookText');
 });
 </script>
 
@@ -23,7 +23,7 @@ watch(locale, () => {
             <h1 class="display-3">Facebook</h1>
 
           <div class="fs-4">
-            {{ instaText }}
+            {{ FacebookText }}
           </div>
         </div>
         <div class="col-lg-1"></div>

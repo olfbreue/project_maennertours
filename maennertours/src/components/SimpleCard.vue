@@ -2,7 +2,7 @@
   <div class="card text-bg-dark mb-3" style="width: 23rem;">
  
   <div class="card-header">
-    Featured
+    Youtube Video
   </div>
   <iframe width="366" height="175" src="https://www.youtube.com/embed/GQaWi69s-MI?si=LFyIpFct_-a9L4Iq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <!--<img src="../assets/trailerStill.png" class="card-img-top" alt="maenner foto">-->

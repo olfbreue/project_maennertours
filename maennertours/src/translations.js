@@ -1,6 +1,8 @@
 export default {
   en: {
     message: {
+      FacebookText: 'Everyone has his preferences when it comes to social media. This is why we alwas post in Facebook and Instagram. We personally highly recommend to check both channels, ' +
+                    'as the best of the content is the contribution from the Community. And this community is not identical on both channels.',
       KlamottenShop:'Hoodies und T-Shirts gibts hier im Shop',
       KlamottenTitle: 'Hoodies und T-Shirts',
       AufkleberTitle: 'Stickers Decals',
@@ -24,13 +26,15 @@ export default {
                         'make it into the selection for a Tour... The last ride to Barcelona and back was accompanied by 29 "Pannenschnäpse"...', 
       pannenSchnapsShop: 'Our Pannenschnaps as a delicious shot, as well as other merch ' +
                         'can be found in our shop :)',
-      youTubeCardText: 'On our YouTube channel you will find more than 200 videos from our Tours, their preparation,'+
-                        'and every disaster inbetween...',
+      youTubeCardText: 'On our YouTube channel you will find more than 200 videos from our Tours, their preparation, '+
+                        'and a lot of disaster and calls for "Pannenschnaps !"',
 
     },
   },
   de: {
     message: {
+      FacebookText: 'Jeder hat so seine Social Media-Vorlieben, deshalb posten wir immer auf Facebook und Instagram. Es lohnt sich aber auf jeden Fall Beide Kanäle zu abonnieren, ' +
+                    'denn das Beste an den Beiträgen sind die Kommentare der Community. Und die ist eben auf beiden channels nicht identisch.',
       KlamottenShop:'Our hoodies and T-shirt selection',
       KlamottenTitle:'Hoodies & Tshirts',
       AufkleberTitle: 'Stickers',
@@ -53,7 +57,7 @@ export default {
       pannenSchnapsShop: 'Den Pannenschnaps als leckere Variante, sowie weiteres Merch ' +
                         'gibts im Shop :)',
       youTubeCardText: 'Auf unserem YouTube Kanal gibts mehr als 200 Videos von unseren Touren der letzten Jahre, die Verwandlung von Altmetall in '+
-                        'fahrbare Vehikel und mehr...',
+                        'fahrbare Vehikel und jede Menge Pleiten Pech und Pannenschnaps...',
 
     },
   },
