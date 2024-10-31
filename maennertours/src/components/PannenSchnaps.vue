@@ -27,9 +27,7 @@ watch(locale, () => {
   KlamottenShop.value = t('message.KlamottenShop');
 });
 
-// klamotten http://www.roggen-roll-shop.de/epages/64652728.sf/de_DE/?ObjectPath=/Shops/64652728/Categories/%22Band%60s%20and%20Friend%60s%22/Maennertours
-// Aufkleber http://www.roggen-roll-shop.de/epages/64652728.sf/de_DE/?ObjectPath=/Shops/64652728/Categories/%22Band%60s%20and%20Friend%60s%22/Maennertours
-// Pannenschnaps https://www.kopfgetriebeoel.de/maennertours/
+
 </script>
 
 <template>
@@ -38,6 +36,7 @@ watch(locale, () => {
       <div class="row" >
         <div class="col-lg-2"></div>
         <div class="col-lg-5" >
+          <h1 class="display-5">Tradition & Merch</h1>
           <div class="fs-3">
             {{ pannenSchnapsText }}
           </div>
@@ -76,24 +75,29 @@ watch(locale, () => {
 <style scoped>
 .bg-image
 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
                     url(../assets/pannenSchnaps1.jpg);
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 90vh;
   position: relative;
   border: 1px solid #727272;
+  margin:4px 8px 4px 8px;
 }
 .row {
   color: #c0c0c0;
   z-index: 1000;
-  padding-top: 8%;
+  padding-top: 4%;
 }
-.col-lg-5 {
+.fs-3{
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
   padding: 40px;
   text-align: center;
   border: 1px solid #727272;
+}
+.col-lg-4{
+  padding-top: 4%;
+  padding-right: 50px;
 }
 </style>

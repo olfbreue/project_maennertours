@@ -18,6 +18,7 @@ watch(locale, () => {
       <div class="row" >
         <div class="col-lg-2"></div>
         <div class="col-lg-5" >
+          <h1 class="display-5">Die Challenge vor der Tour...</h1>
           <div class="fs-3">
             {{ karrenText }}
           </div>
@@ -47,29 +48,40 @@ watch(locale, () => {
 </template>
 
 <style scoped>
+.bg-image
+{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                    url(../assets/schrottkarren.JPG);
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  position: relative;
+  border: 1px solid #727272;
+  margin:4px 8px 4px 8px;
+
+}
 .container-fluid {
   padding: 20px;
 }
 .fs-3 {
-  margin-bottom: 20px;
-}
-img{
-  max-width: 625px;
-  max-height: 370px;
-}
-.col-lg-5 {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
   padding: 40px;
   text-align: center;
   border: 1px solid #727272;
 }
+img{
+  max-width: 625px;
+  max-height: 370px;
+}
+
 .row {
   color: #c0c0c0;
   z-index: 1000;
-  padding-top: 1%;
+  padding-top: 4%;
 }
 #carouselExampleSlidesOnly{
-  padding-top:10%
+  padding-top:12%;
+  padding-right:10%;
 }
 </style>

@@ -12,6 +12,8 @@ changeLanguage('de');
 </script>
 
 <template>
+    <nav class="mx-2">
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-lg-height-5rem">
     <div class="container-fluid">
       <a class="navbar-brand">
@@ -61,6 +63,8 @@ changeLanguage('de');
       </div>
     </div>
   </nav>
+</nav>
+
 </template>
 
 <style scoped>
@@ -70,6 +74,8 @@ changeLanguage('de');
   border-top: 1px solid #c0c0c0;
   border-bottom: 1px solid #c0c0c0;
   padding-top: 10px;
+  padding-left: 8px;
+  padding-right:8px;
 }
 .logo {
   margin: 0 auto 2rem;

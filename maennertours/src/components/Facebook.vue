@@ -39,7 +39,7 @@ watch(locale, () => {
 .bg-image
 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                    url(../assets/alpenWechsel.png);
+                    url(../assets/alpen2.JPG);
   background-size: cover;
   background-position: center;
   height: 80vh;

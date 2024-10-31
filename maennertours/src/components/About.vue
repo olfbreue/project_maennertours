@@ -45,14 +45,14 @@ watch(locale, () => {
 
 <style scoped>
 .bg-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
                     url(../assets/middle_of_the_road.jpg);
   background-size: cover;
   background-position: center;
   height: 90vh;
   position: relative;
   border: 1px solid #727272;
-  margin:8px;
+  margin:8px 8px 4px 8px;
 }
 .row {
   color: #c0c0c0;
