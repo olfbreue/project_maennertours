@@ -22,7 +22,9 @@ watch(locale, () => {
       <div class="row" >
         <div class="col-lg-2"></div>
         <div class="col-lg-4" >
+          <h1 class="display-3">YouTube</h1>
           <div class="fs-4">
+            
             {{ youTubeCardText }}
           </div>
         </div>

@@ -67,6 +67,9 @@ img{
 .row {
   color: #c0c0c0;
   z-index: 1000;
-  padding-top: 8%;
+  padding-top: 1%;
+}
+#carouselExampleSlidesOnly{
+  padding-top:10%
 }
 </style>

@@ -7,7 +7,7 @@ const lastScrollPosition = ref(0);
 
 const handleScroll = () => {
   const currentScrollPosition = window.scrollY;
-  
+
   // Determine scroll direction and update visibility
   if (currentScrollPosition < lastScrollPosition.value) {
     // Scrolling up
@@ -16,7 +16,7 @@ const handleScroll = () => {
     // Scrolling down
     isVisible.value = false;
   }
-  
+
   lastScrollPosition.value = currentScrollPosition;
 };
 
@@ -79,6 +79,6 @@ img {
 }
 
 .header-spacer {
-  height: calc(18vh + 50px); /* Adjust this value based on your NavigationBar height */
+  height: calc(18vh + 85px); /* Adjust this value based on your NavigationBar height */
 }
 </style>

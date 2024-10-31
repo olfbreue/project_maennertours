@@ -1,15 +1,13 @@
 <script setup>
-import SimpleCard from '../components/SimpleCard.vue';
 import { useI18n } from 'vue-i18n';
 import { ref, watch } from 'vue';
-import YouTube from '@/components/YouTube.vue';
-import InstaGram from '@/components/InstaGram.vue';
-import Facebook from '@/components/Facebook.vue';
+import SimpleCard from '../components/SimpleCard.vue';
 
 const { t, locale } = useI18n();
 const translatedMessage = ref(t('message.aboutText'));
 const videoTitle = ref(t('message.aboutVideoTitle'));
 const videoText = ref(t('message.aboutVideoText'));
+
 
 // Watch the locale and update the translated message and video title whenever it changes
 watch(locale, () => {
@@ -20,29 +18,48 @@ watch(locale, () => {
 </script>
 
 <template>
-    <YouTube></YouTube>
-    <InstaGram></InstaGram> 
-    <Facebook></Facebook>
+
+<div class="bg-image rounded-3">
+    <div class="container-fluid">
+      <div class="row" style="height: 400px;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-5">
+          <h1 class="display-4">Neu hier?</h1>
+           <div class="fs-3">
+            {{ translatedMessage }}
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4 border-light">
+          <SimpleCard
+            :title="videoTitle"
+            :text="videoText"
+            btntext="Click Me"
+            btnlink="https://example.com"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-/*
 .bg-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                    url(../assets/challenges.JPG);
+                    url(../assets/middle_of_the_road.jpg);
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 90vh;
   position: relative;
   border: 1px solid #727272;
+  margin:8px;
 }
-  */
 .row {
   color: #c0c0c0;
   z-index: 1000;
-  padding-top: 8%;
+  padding-top: 5%;
 }
-.col-lg-4 {
+.fs-3 {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
   padding: 40px;
