@@ -3,6 +3,7 @@ import SimpleCard from '../components/SimpleCard.vue';
 import { useI18n } from 'vue-i18n';
 import { ref, watch } from 'vue';
 import PannenSchnaps from '@/components/PannenSchnaps.vue';
+import Vehicles from '../components/Vehicles.vue';
 
 const { t, locale } = useI18n();
 const translatedMessage = ref(t('message.aboutText'));
@@ -40,6 +41,7 @@ watch(locale, () => {
     </div>
   </div>
   <PannenSchnaps></PannenSchnaps>
+  <Vehicles></Vehicles>
 </template>
 
 <style scoped>

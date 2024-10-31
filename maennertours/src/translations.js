@@ -1,12 +1,15 @@
 export default {
   en: {
     message: {
+      karrenText:'Up until this point it will be clear that "Männertours" is not just another travel-blog. We buy all vehicles as cheap as possible and always manage to somehow' +
+                  ' get them back on the road during winter months. We deliberately avoid too much planning ahead and unnecessary professional repairs. The provisional repairs ' +
+                  'are the ones lasting the longest anyway...',
       instaText: 'On Instagram we post all updates during a tour and in the preparation phase. As we are filming and cutting all content ourselves, ' +
                   'we always need some weeks before the new tour-video goes online. On social media we post every update immediately, even during the tours.. ',
       btntextVideo: 'Watch',
       btntextShop: 'Visit our Shop',
       aboutText: 'During the last years Männertours has become a kind of "real-world escaperoom". ' +
-        'A good functioning team is mostly needed to get the needed solution, and the challenges can be as hard as the conditions. ' + 
+        'A good functioning team is always key to get the needed solution, and the challenges can be as hard as the conditions. ' + 
         'The choice of our vehicles on top lays the pavement for a lot of adventures on the way...',
       aboutVideoTitle: 'What is Männertours?',
       aboutVideoText: 'The story of Männertours in under three minutes... A short Video on how it all began and what we are doing now...',
@@ -24,12 +27,14 @@ export default {
   },
   de: {
     message: {
+      karrenText:'Spätestens jetzt dürfte jedem klar sein daß Männertours kein gewöhnlicher Reiseblog ist. Alle Fahrzeuge kaufen wir so billig wie möglich und bringen sie über ' +
+                  'die Wintermonate irgendwie wieder zum laufen. Zu viel Planung vermeiden wir genauso wie unnötigen Aufwand. Ein Provisorium hält doch meistens am Längsten...',
       instaText:'Auf Insta gibts während der Touren und der Vorbereitungszeit immer Neuigkeiten. Da wir allen Content selber machen und schneiden brauchen wir immer etwas ' +
-               'Zwit bis so ein Tourvideo fertig ist. Auf Social Media gibts alle updates direkt, noch während der Tour...',
+               'Zeit bis so ein Tourvideo fertig ist. Auf Social Media gibts alle updates direkt, noch während der Tour...',
       btntextVideo:'Play',
       btntextShop: 'Zum Shop',
       aboutText: 'Männertours hat sich mit den Jahren zu eine Art "Real-World Escaperoom" auf Rädern entwickelt. ' +
-        'Lösungen gibt es nur im Team und die Herausforderungen sind so hart wie die Äusseren Bedingungen. ' +
+        'Lösungen gibt es nur im Team und die Herausforderungen sind manchmal so krass wie die Äusseren Bedingungen. ' +
         'Die Auswahl unserer Fahrzeuge garantiert eine Menge Spass und Abenteuer.',
       aboutVideoTitle: 'Was ist Männertours?',
       aboutVideoText: 'Die Geschichte von Männertours in unter drei Minuten... Ein kurzes Video wie alles begann und was es mit unseren Touren auf sich hat...',
