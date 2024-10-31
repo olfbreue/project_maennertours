@@ -1,6 +1,10 @@
 export default {
   en: {
     message: {
+      KlamottenShop:'Hoodies und T-Shirts gibts hier im Shop',
+      KlamottenTitle: 'Hoodies und T-Shirts',
+      AufkleberTitle: 'Stickers Decals',
+      AufkleberShop: 'Member of our community? Then you got some nice decals over here :)',
       karrenText:'Up until this point it will be clear that "Männertours" is not just another travel-blog. We buy all vehicles as cheap as possible and always manage to somehow' +
                   ' get them back on the road during winter months. We deliberately avoid too much planning ahead and unnecessary professional repairs. The provisional repairs ' +
                   'are the ones lasting the longest anyway...',
@@ -27,6 +31,10 @@ export default {
   },
   de: {
     message: {
+      KlamottenShop:'Our hoodies and T-shirt selection',
+      KlamottenTitle:'Hoodies & Tshirts',
+      AufkleberTitle: 'Stickers',
+      AufkleberShop: 'Aktiv in unserer Community? Dann gibts hier die Sticker :)',
       karrenText:'Spätestens jetzt dürfte jedem klar sein daß Männertours kein gewöhnlicher Reiseblog ist. Alle Fahrzeuge kaufen wir so billig wie möglich und bringen sie über ' +
                   'die Wintermonate irgendwie wieder zum laufen. Zu viel Planung vermeiden wir genauso wie unnötigen Aufwand. Ein Provisorium hält doch meistens am Längsten...',
       instaText:'Auf Insta gibts während der Touren und der Vorbereitungszeit immer Neuigkeiten. Da wir allen Content selber machen und schneiden brauchen wir immer etwas ' +

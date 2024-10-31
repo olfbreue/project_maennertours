@@ -32,13 +32,10 @@ changeLanguage('de');
             <a class="nav-link" href="#">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Shop</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Kontakt</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tour-Tracker</a>
+            <router-link class="nav-link active" aria-current="page" to="/TourTracker">Tour-Tracker</router-link>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

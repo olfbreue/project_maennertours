@@ -7,9 +7,8 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Merchandising</h5>
         <p class="card-text">{{ text }}</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+       
         <a href="#" class="btn btn-primary">{{ btntext }}</a>
       </div>
     </div>

@@ -27,7 +27,8 @@ watch(locale, () => {
         <div class="col-lg-1"></div>
         <div class="col-lg-4">
          
-            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmaennertours%2Fposts%2Fpfbid02ir6kMMXN1xG3HsmX6o1HVmvx6SDqjTwZtXV4dACRVxxtX5JQdmUYGDa1CcGoWDAdl&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>        </div>
+            <iframe src="https://maennertours.autoskope.de/"></iframe>        
+        </div>
       </div>
     </div>
   </div>
