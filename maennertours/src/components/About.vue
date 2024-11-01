@@ -7,13 +7,14 @@ const { t, locale } = useI18n();
 const translatedMessage = ref(t('message.aboutText'));
 const videoTitle = ref(t('message.aboutVideoTitle'));
 const videoText = ref(t('message.aboutVideoText'));
-
+const aboutHeader = ref(t('message.aboutHeader'));
 
 // Watch the locale and update the translated message and video title whenever it changes
 watch(locale, () => {
   translatedMessage.value = t('message.aboutText');
   videoTitle.value = t('message.aboutVideoTitle');
   videoText.value = t('message.aboutVideoText');
+  aboutHeader.value = t('message.aboutHeader');
 });
 </script>
 
@@ -21,10 +22,10 @@ watch(locale, () => {
 
 <div class="bg-image rounded-3">
     <div class="container-fluid">
-      <div class="row" style="height: 400px;">
-        <div class="col-lg-2"></div>
+      <div class="row d-flex justify-content-center" style="height: 400px;">
+       <!-- <div class="col-lg-1"></div>-->
         <div class="col-lg-5">
-          <h1 class="display-4">Neu hier?</h1>
+          <h1 class="display-4">{{aboutHeader}}</h1>
            <div class="fs-3">
             {{ translatedMessage }}
           </div>

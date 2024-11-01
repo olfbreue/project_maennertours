@@ -5,20 +5,23 @@ import { ref, watch } from 'vue';
 
 const { t, locale } = useI18n();
 const karrenText = ref(t('message.karrenText'));
+const vehiclesHeader = ref(t('message.vehiclesHeader'));
+
 
 // Watch the locale and update the translated message whenever it changes
 watch(locale, () => {
   karrenText.value = t('message.karrenText');
+  vehiclesHeader.value = t('message.vehiclesHeader');
 });
 </script>
 
 <template>
   <div class="bg-image rounded-3">
     <div class="container-fluid">
-      <div class="row" >
-        <div class="col-lg-2"></div>
+      <div class="row d-flex justify-content-center" >
+        
         <div class="col-lg-5" >
-          <h1 class="display-5">Die Challenge vor der Tour...</h1>
+          <h1 class="display-5">{{vehiclesHeader}}</h1>
           <div class="fs-3">
             {{ karrenText }}
           </div>

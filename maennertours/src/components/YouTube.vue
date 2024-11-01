@@ -19,8 +19,7 @@ watch(locale, () => {
 <template>
   <div class="bg-image rounded-3">
     <div class="container-fluid">
-      <div class="row" >
-        <div class="col-lg-2"></div>
+      <div class="row d-flex justify-content-center" >
         <div class="col-lg-4" >
           <h1 class="display-3">YouTube</h1>
           <div class="fs-4">

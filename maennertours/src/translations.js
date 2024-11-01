@@ -1,10 +1,11 @@
 export default {
   en: {
     message: {
+ 
       FacebookText: 'Everyone has his preferences when it comes to social media. This is why we alwas post in Facebook and Instagram. We personally highly recommend to check both channels, ' +
                     'as the best of the content is the contribution from the Community. And this community is not identical on both channels.',
       KlamottenShop:'Hoodies und T-Shirts gibts hier im Shop',
-      KlamottenTitle: 'Hoodies und T-Shirts',
+      KlamottenTitle: 'Hoodies and T-Shirts',
       AufkleberTitle: 'Stickers Decals',
       AufkleberShop: 'Member of our community? Then you got some nice decals over here :)',
       karrenText:'We buy all vehicles as cheap as possible and always manage to somehow' +
@@ -18,9 +19,12 @@ export default {
         'A good functioning team is always key to get the needed solution, and the challenges can be as hard as the conditions. ' + 
         'The choice of our vehicles on top lays the pavement for a lot of adventures on the way...',
       aboutVideoTitle: 'What is Männertours?',
+      aboutHeader: 'New to Männertours?',
       aboutVideoText: 'The story of Männertours in under three minutes... A short Video on how it all began and what we are doing now...',
       vehicleCardText: 'Our Vehicles',
-    
+      vehiclesHeader: 'The challenges before any tour...',
+      pannenHeader: 'Tradition and merchandising',
+
       pannenSchnapsText: 'Traditions held high... like the "Pannenschnaps". Mandatory procedure with every breakdown. ' +
                         'Meanwhile the Schnaps is mostly sponsored by the community and only the most disgusting Schnapses ' +
                         'make it into the selection for a Tour... The last ride to Barcelona and back was accompanied by 29 "Pannenschnäpse"...', 
@@ -33,6 +37,7 @@ export default {
   },
   de: {
     message: {
+      
       FacebookText: 'Jeder hat so seine Social Media-Vorlieben, deshalb posten wir immer auf Facebook und Instagram. Es lohnt sich aber auf jeden Fall Beide Kanäle zu abonnieren, ' +
                     'denn das Beste an den Beiträgen sind die Kommentare der Community. Und die ist eben auf beiden channels nicht identisch.',
       KlamottenShop:'Our hoodies and T-shirt selection',
@@ -45,12 +50,15 @@ export default {
                'Zeit bis so ein Tourvideo fertig ist. Auf Social Media gibts alle updates direkt, noch während der Tour...',
       btntextVideo:'Play',
       btntextShop: 'Zum Shop',
-      aboutText: 'Männertours hat sich mit den Jahren zu eine Art "Real-World Escaperoom" auf Rädern entwickelt. ' +
+      aboutHeader: 'Neu hier?',
+      aboutText: 'Männertours hat sich mit den Jahren zu einer Art "Real-World Escaperoom" auf Rädern entwickelt. ' +
         'Lösungen gibt es nur im Team und die Herausforderungen sind manchmal so krass wie die Äusseren Bedingungen. ' +
         'Die Auswahl unserer Fahrzeuge garantiert eine Menge Spass und Abenteuer.',
       aboutVideoTitle: 'Was ist Männertours?',
       aboutVideoText: 'Die Geschichte von Männertours in unter drei Minuten... Ein kurzes Video wie alles begann und was es mit unseren Touren auf sich hat...',
       vehicleCardText: 'Unsere Karren...',
+      vehiclesHeader: 'Die Herausvorderungen vor jeder Tour...',
+      pannenHeader: 'Tradition und Merch',
       pannenSchnapsText: 'Tradition verpflichtet... so wie der Pannenschnaps. Eine Pflichtübung bei jeder Panne... ' +
                         'Mittlerweile wird der Pannenschnaps von der Community gestiftet und nur die wirklich ekelhaftesten ' +
                         'Schnäpse kommen in die engere Auswahl für eine Tour... Bei der letzten Tour nach Barcelona und zurück waren es insgesamt 29 Pannenschnäpse...',

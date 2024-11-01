@@ -1,15 +1,15 @@
 <template>
-  <div class="card text-bg-dark mb-3" style="width: 23rem;">
+  <div class="card text-bg-dark mb-3 " >
  
   <div class="card-header">
     Youtube Video
   </div>
-  <iframe width="366" height="175" src="https://www.youtube.com/embed/GQaWi69s-MI?si=LFyIpFct_-a9L4Iq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="460" height="245" src="https://www.youtube.com/embed/GQaWi69s-MI?si=LFyIpFct_-a9L4Iq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <!--<img src="../assets/trailerStill.png" class="card-img-top" alt="maenner foto">-->
   <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
     <p class="card-text">{{ text }}</p>
-    <a href="#" class="btn btn-primary">{{ btntext }}</a>
+    <a href="#" class="btn btn-primary text-end">{{ btntext }}</a>
   </div>
 </div>
 </template>

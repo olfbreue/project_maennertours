@@ -13,7 +13,7 @@ const handleScroll = () => {
   // Update the translation value based on scroll
   headerTranslate.value = Math.max(
     Math.min(headerTranslate.value - scrollDelta, 0), // Don't translate down more than 0
-    -(headerHeight.value * 1.25) // Don't translate up more than header height
+    -(headerHeight.value * 1.5) // Don't translate up more than header height
   );
   
   lastScrollPosition.value = currentScrollPosition;

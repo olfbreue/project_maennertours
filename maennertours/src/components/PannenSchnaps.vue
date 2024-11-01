@@ -15,6 +15,7 @@ const AufkleberShop = ref(t('message.AufkleberShop'));
 const AufkleberTitle = ref(t('message.AufkleberTitle'));
 const KlamottenTitle = ref(t('message.KlamottenTitle'));
 const KlamottenShop = ref(t('message.KlamottenShop'));
+const pannenHeader = ref(t('message.pannenHeader'));
 
 // Watch the locale and update the translated message and video title whenever it changes
 watch(locale, () => {
@@ -25,6 +26,7 @@ watch(locale, () => {
   btntextShop.value = t('message.btntextShop');
   KlamottenTitle.value = t('message.KlamottenTitle');
   KlamottenShop.value = t('message.KlamottenShop');
+  pannenHeader.value = t('message.pannenHeader');
 });
 
 
@@ -33,10 +35,9 @@ watch(locale, () => {
 <template>
   <div class="bg-image rounded-3">
     <div class="container-fluid">
-      <div class="row" >
-        <div class="col-lg-2"></div>
+      <div class="row d-flex justify-content-center" >
         <div class="col-lg-5" >
-          <h1 class="display-5">Tradition & Merch</h1>
+          <h1 class="display-5">{{pannenHeader}}</h1>
           <div class="fs-3">
             {{ pannenSchnapsText }}
           </div>

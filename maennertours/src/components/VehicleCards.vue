@@ -1,6 +1,6 @@
 <template>
 
-  <div class="card mb-3 text-bg-dark" style="max-width: 340px;">
+  <div class="card mb-3 text-bg-dark text-end" style="max-width: 450px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img :src="image" class="card-img-top" alt="vehicle image">
