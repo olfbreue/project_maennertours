@@ -164,7 +164,8 @@ onMounted(async () => {
 });
 </script>
 
-<style>
+
+<style scoped>
 .blog-container {
   max-width: 800px;
   margin: 0 auto;

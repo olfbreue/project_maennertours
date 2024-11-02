@@ -1,5 +1,5 @@
 <script setup>
-import VehicleCards from '@/components/VehicleCards.vue';
+import VehicleCards from './VehicleCards.vue';
 import { useI18n } from 'vue-i18n';
 import { ref, watch } from 'vue';
 

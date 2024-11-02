@@ -31,7 +31,7 @@ changeLanguage('de');
             <router-link class="nav-link active" aria-current="page" to="/SocialMedia">Social Media</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <router-link class="nav-link active" aria-current="page" to="/BlogView">Blog</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Kontakt</a>

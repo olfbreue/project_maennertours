@@ -1,9 +1,17 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+  import PannenSchnaps from '../components/PannenSchnaps.vue';
+  import Vehicles from '../components/Vehicles.vue';
+  import About from '../components/About.vue';
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <About></About>
+  <Vehicles></Vehicles>
+  <PannenSchnaps></PannenSchnaps>
+  
 </template>
+
+<style scoped>
+
+
+</style>

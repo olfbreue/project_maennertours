@@ -2,9 +2,9 @@
 import SimpleCard from '../components/SimpleCard.vue';
 import { useI18n } from 'vue-i18n';
 import { ref, watch } from 'vue';
-import YouTube from '@/components/YouTube.vue';
-import InstaGram from '@/components/InstaGram.vue';
-import Facebook from '@/components/Facebook.vue';
+import YouTube from '../components/YouTube.vue';
+import InstaGram from '../components/InstaGram.vue';
+import Facebook from '../components/Facebook.vue';
 
 const { t, locale } = useI18n();
 const translatedMessage = ref(t('message.aboutText'));

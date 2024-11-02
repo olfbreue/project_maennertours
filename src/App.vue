@@ -1,17 +1,21 @@
-<!-- App.vue -->
-<template>
-  <div>
-    <h1>My Blog</h1>
-    <AuthComponent />
-    <BlogPosts />
-  </div>
-</template>
-
+<!-- src/components/App.vue -->
 <script setup>
-import AuthComponent from './components/AuthComponent.vue';
-import BlogPosts from './components/BlogPosts.vue';
+import UpperPart from './components/UpperPart.vue';
+
 </script>
 
+<template>
+
+    <UpperPart />
+    <RouterView />
+
+ 
+</template>
+
 <style>
-/* Add some basic styling if needed */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 </style>
