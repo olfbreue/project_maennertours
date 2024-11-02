@@ -24,7 +24,7 @@
            :key="post.id" 
            class="post-card">
         <h3>{{ post.title }}</h3>
-        <p>{{ post.content }}</p>
+        <p>{{ stripHtml(post.content) }}</p>
       </div>
     </div>
   </div>
@@ -38,6 +38,12 @@ import SearchBar from './SearchBar.vue';
 
 const postStore = usePostStore();
 const { posts, searchedPosts } = storeToRefs(postStore);
+
+// Function to strip HTML tags
+const stripHtml = (html) => {
+  if (!html) return '';
+  return html.replace(/<\/?[^>]+(>|$)/g, '');
+};
 
 onMounted(async () => {
   await postStore.fetchPosts();
@@ -61,6 +67,8 @@ onMounted(async () => {
   border: 1px solid #333;
   padding: 15px;
   border-radius: 8px;
+  background-color: white;
+  color:#333;
 }
 
 .error-message {

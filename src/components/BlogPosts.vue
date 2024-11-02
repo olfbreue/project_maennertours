@@ -287,5 +287,6 @@ button.active {
 }
 h1{
   color:white;
+  padding: 20px;
 }
 </style>
