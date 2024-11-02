@@ -1,4 +1,10 @@
 <template>
+
+<div class="posts-page">
+    <h1>Blog Posts</h1>
+    <PostList />
+  </div>
+
   <div class="blog-container">
     <div v-if="user" class="editor-section">
       <input class="title-input" v-model="title" placeholder="Enter post title..." />
@@ -41,6 +47,8 @@ import { EditorContent, useEditor } from '@tiptap/vue-3';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
 import { useSupabase } from '../composables/useSupabase';
+import PostList from '@/components/PostList.vue';
+
 
 const supabase = useSupabase();
 
@@ -165,7 +173,7 @@ onMounted(async () => {
 </script>
 
 
-<style scoped>
+<style>
 .blog-container {
   max-width: 800px;
   margin: 0 auto;
@@ -269,9 +277,15 @@ button:hover {
   border: 1px solid #ccc;
   min-height: 150px;
   padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+
 }
 
 button.active {
   background-color: #ddd;
+}
+h1{
+  color:white;
 }
 </style>
