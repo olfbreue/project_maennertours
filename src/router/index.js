@@ -4,6 +4,7 @@ import SocialMedia from '../views/SocialMedia.vue'; // Adjust the path as necess
 import HomeView from '../views/HomeView.vue';
 import TourTracker from '../views/TourTracker.vue';
 import BlogView from '../views/BlogView.vue';
+import NotFound from "@/views/NotFound.vue"
 
 
 const router = createRouter({
@@ -29,6 +30,7 @@ const router = createRouter({
         name: 'BlogView',
         component: BlogView
       },
+      {path: "/:pathMatch(.*)*", name:"NotFound", component: NotFound}
       // Add other routes here
     ]
   })
