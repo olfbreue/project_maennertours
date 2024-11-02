@@ -1,6 +1,7 @@
 <!-- src/components/App.vue -->
 <script setup>
 import UpperPart from './components/UpperPart.vue';
+import Footer from './components/Footer.vue';
 
 </script>
 
@@ -8,6 +9,7 @@ import UpperPart from './components/UpperPart.vue';
 
     <UpperPart />
     <RouterView />
+  <Footer />
 
  
 </template>
