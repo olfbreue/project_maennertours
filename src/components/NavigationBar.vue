@@ -78,11 +78,11 @@ changeLanguage('de');
   padding-right:8px;
 }
 .logo {
-  margin: 0 auto 2rem;
+
   height: 260px;
   width: 260px;
   position: relative;
-  margin-left: 80px;
+
   margin-right: 30px;
   z-index: 1000;
 }
@@ -91,4 +91,18 @@ changeLanguage('de');
   height: 20px;
   margin-right: 4px;
 }
+
+@media (max-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    text-align: center; /* Centered text for smaller screens */
+    background-color: black;
+    position: relative;
+  }
+.logo {
+display: none;
+
+}
+}
+
+
 </style>
