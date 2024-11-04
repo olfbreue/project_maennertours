@@ -62,6 +62,7 @@ onUnmounted(() => {
   background-position: center;
   height: 18vh;
   position: relative;
+  min-height: 110px;
 }
 
 .centered-logo-container {
@@ -70,6 +71,7 @@ onUnmounted(() => {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  min-height: 110px;
 }
 
 img {

@@ -16,9 +16,9 @@ changeLanguage('de');
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-lg-height-5rem">
     <div class="container-fluid">
-      <a class="navbar-brand">
+     <a class="navbar-brand">
         <img class="logo" src="@/assets/Alles_weiss_Logo_1.png">
-      </a>
+      </a> 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -91,4 +91,10 @@ changeLanguage('de');
   height: 20px;
   margin-right: 4px;
 }
+.navbar-brand img {
+  width: auto;
+  height: 50vh; /* Viewport height units */
+  max-height: 200px; /* Optional maximum height */
+}
+
 </style>
