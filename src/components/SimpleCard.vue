@@ -9,7 +9,7 @@
   <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
     <p class="card-text">{{ text }}</p>
-    <a href="#" class="btn btn-primary text-end">{{ btntext }}</a>
+    <a href="https://youtu.be/GQaWi69s-MI?si=YSkVLJJWNQ54ctpe" target="_blanc" class="btn btn-primary text-end">{{ btntext }}</a>
   </div>
 </div>
 </template>

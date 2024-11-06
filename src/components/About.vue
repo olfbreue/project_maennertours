@@ -8,6 +8,7 @@ const translatedMessage = ref(t('message.aboutText'));
 const videoTitle = ref(t('message.aboutVideoTitle'));
 const videoText = ref(t('message.aboutVideoText'));
 const aboutHeader = ref(t('message.aboutHeader'));
+const btntextVideo = ref(t('message.btntextVideo'));
 
 // Watch the locale and update the translated message and video title whenever it changes
 watch(locale, () => {
@@ -15,7 +16,12 @@ watch(locale, () => {
   videoTitle.value = t('message.aboutVideoTitle');
   videoText.value = t('message.aboutVideoText');
   aboutHeader.value = t('message.aboutHeader');
+  btntextVideo.value = t('message.btntextVideo');
 });
+
+
+// Define the button text and link as reactive properties
+
 </script>
 
 <template>
@@ -35,9 +41,10 @@ watch(locale, () => {
           <SimpleCard
             :title="videoTitle"
             :text="videoText"
-            btntext="Click Me"
-            btnlink="https://example.com"
-          />
+            :btntext="btntextVideo"
+            btnlink="https://youtu.be/GQaWi69s-MI?si=YSkVLJJWNQ54ctpe"
+       />
+ 
         </div>
       </div>
     </div>

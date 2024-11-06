@@ -9,7 +9,8 @@
       <div class="card-body">
         <p class="card-text">{{ text }}</p>
        
-        <a href="#" class="btn btn-primary">{{ btntext }}</a>
+        <!-- Use btnlink prop dynamically -->
+        <a :href="btnlink" target="_blank" class="btn btn-primary">{{ btntext }}</a>
       </div>
     </div>
   </div>
@@ -24,6 +25,7 @@ const props = defineProps({
   image: String,
   text: String,
   btntext: String,
+  btnlink: String, // Add btnlink as a prop
 });
 
 //console.log('Vehicle Card s Image prop value:', props.image)
