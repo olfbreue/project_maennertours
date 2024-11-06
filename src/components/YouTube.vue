@@ -57,14 +57,14 @@ watch(locale, () => {
                     url(../assets/alpenWechsel.png);
   background-size: cover;
   background-position: center;
-  height: 80vh;
   position: relative;
   border: 1px solid #727272;
 }
 .row {
   color: #c0c0c0;
   z-index: 1000;
-  padding-top: 6%;
+  padding-top: 4%;
+  padding-bottom: 4%;
 }
 .fs-4 {
   background-color: rgba(0, 0, 0, 0.5);

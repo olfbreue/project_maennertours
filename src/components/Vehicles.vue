@@ -57,7 +57,7 @@ watch(locale, () => {
                     url(../assets/schrottkarren.JPG);
   background-size: cover;
   background-position: center;
-  height: 80vh;
+ 
   position: relative;
   border: 1px solid #727272;
   margin:4px 8px 4px 8px;
@@ -82,6 +82,7 @@ img{
   color: #c0c0c0;
   z-index: 1000;
   padding-top: 4%;
+  padding-bottom: 4%;
 }
 #carouselExampleSlidesOnly{
   padding-top:12%;

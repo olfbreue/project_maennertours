@@ -1,7 +1,9 @@
 <!-- components/PostList.vue -->
 <template>
+
+<SearchBar />
   <div class="posts-container">
-    <SearchBar />
+  
     
     <div v-if="postStore.error" class="error-message">
       Error loading posts: {{ postStore.error }}

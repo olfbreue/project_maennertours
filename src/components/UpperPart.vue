@@ -75,8 +75,9 @@ onUnmounted(() => {
 }
 
 img {
-  width: 80%;
-  height: 80%;
+  width:30%;
+
+
 }
 
 .header-spacer {

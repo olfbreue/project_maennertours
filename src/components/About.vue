@@ -20,9 +20,9 @@ watch(locale, () => {
 
 <template>
 
-<div class="bg-image rounded-3">
+<div class="bg-image rounded-3 mt-lg-5">
     <div class="container-fluid">
-      <div class="row d-flex justify-content-center" style="height: 400px;">
+      <div class="row d-flex justify-content-center" >
        <!-- <div class="col-lg-1"></div>-->
         <div class="col-lg-5">
           <h1 class="display-4">{{aboutHeader}}</h1>
@@ -46,19 +46,21 @@ watch(locale, () => {
 
 <style scoped>
 .bg-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                     url(../assets/middle_of_the_road.jpg);
   background-size: cover;
   background-position: center;
-  height: 90vh;
+  /*height: 90vh; */
   position: relative;
   border: 1px solid #727272;
-  margin:8px 8px 4px 8px;
+  margin:8px 8px 8px 8px;
+  
 }
 .row {
   color: #c0c0c0;
   z-index: 1000;
-  padding-top: 5%;
+  padding-top: 4%;
+  padding-bottom: 4%;
 }
 .fs-3 {
   background-color: rgba(0, 0, 0, 0.5);

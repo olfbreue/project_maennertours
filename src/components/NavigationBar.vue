@@ -12,18 +12,18 @@ changeLanguage('de');
 </script>
 
 <template>
-    <nav class="mx-2">
+   
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-lg-height-5rem">
     <div class="container-fluid">
      <a class="navbar-brand">
-        <img class="logo" src="@/assets/Alles_weiss_Logo_1.png">
+        <img class="logo navbar-expand-lg" src="@/assets/Alles_weiss_Logo_1.png">
       </a> 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mx-4 mb-lg-0 ms-auto">
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mb- mx- mb-lg-0 ms-auto">
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
           </li>
@@ -63,11 +63,15 @@ changeLanguage('de');
       </div>
     </div>
   </nav>
-</nav>
+
 
 </template>
 
 <style scoped>
+
+.navbar-toggler-icon{
+  margin-right:100px;
+}
 .navbar-expand-lg-height-5rem {
   height: 5.5rem;
   background-image: url("../assets/tarmac.png");
@@ -79,9 +83,9 @@ changeLanguage('de');
 }
 .logo {
 
-  height: 260px;
-  width: 260px;
-  position: relative;
+  max-height: 160px;
+  max-width: 160px;
+  /*position: relative; */
 
   margin-right: 30px;
   z-index: 1000;
@@ -91,4 +95,24 @@ changeLanguage('de');
   height: 20px;
   margin-right: 4px;
 }
+@media (max-width: 990px) {
+  .logo {
+    width: 90px;
+    height: auto;
+  }
+  .container-fluid{
+    position:absolute;
+    
+    height: 100px;
+  }
+}
+.nav-item{
+  
+  padding-left:10px;
+ 
+}
+.collapse{
+  background-color: #343a40;
+}
+
 </style>

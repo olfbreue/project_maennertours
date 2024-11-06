@@ -76,11 +76,10 @@ watch(locale, () => {
 <style scoped>
 .bg-image
 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                     url(../assets/pannenSchnaps1.jpg);
   background-size: cover;
   background-position: center;
-  height: 90vh;
   position: relative;
   border: 1px solid #727272;
   margin:4px 8px 4px 8px;
@@ -89,6 +88,7 @@ watch(locale, () => {
   color: #c0c0c0;
   z-index: 1000;
   padding-top: 4%;
+  padding-bottom: 4%;
 }
 .fs-3{
   background-color: rgba(0, 0, 0, 0.5);
