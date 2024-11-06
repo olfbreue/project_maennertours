@@ -16,13 +16,13 @@ changeLanguage('de');
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-lg-height-5rem">
     <div class="container-fluid">
-<h3>             Copyright 2024 Männertours </h3>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<h4 style="color:whitesmoke;">             Copyright 2024 Männertours </h4>
+    <!--  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mx-4 mb-lg-0 ms-auto">
-          <li class="nav-item">
+         <ul class="navbar-nav mb-2 mx-4 mb-lg-0 ms-auto">
+         <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
           </li>
           <li class="nav-item">
@@ -53,12 +53,12 @@ changeLanguage('de');
                   <img src="../assets/en.png" alt="English" class="me-1">
                   English
                 </a>
-              </li>
+              </li> 
             </ul>
           </li>
          
         </ul>
-      </div>
+      </div>  -->
     </div>
   </nav>
 </nav>

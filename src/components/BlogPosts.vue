@@ -14,7 +14,7 @@
         <button @click="toggleItalic" :class="{ active: editor.isActive('italic') }">Italic</button>
         <button @click="toggleStrike" :class="{ active: editor.isActive('strike') }">Strike</button>
         <button @click="toggleCode" :class="{ active: editor.isActive('code') }">Code</button>
-        <input type="file" @change="insertImage" accept="image/*" />
+       <!-- <input type="file" @change="insertImage" accept="image/*" />-->
       </div>
 
       <editor-content class="tiptap-editor" :editor="editor" />

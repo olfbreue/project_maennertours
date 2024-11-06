@@ -33,9 +33,9 @@ changeLanguage('de');
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/BlogView">Blog</router-link>
           </li>
-          <li class="nav-item">
+        <!--  <li class="nav-item">
             <a class="nav-link" href="#">Kontakt</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/TourTracker">Tour-Tracker</router-link>
           </li>
