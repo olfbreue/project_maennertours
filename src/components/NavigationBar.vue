@@ -78,11 +78,11 @@ changeLanguage('de');
   padding-right:8px;
 }
 .logo {
-  margin: 0 auto 2rem;
+
   height: 260px;
   width: 260px;
   position: relative;
-  margin-left: 80px;
+
   margin-right: 30px;
   z-index: 1000;
 }
@@ -91,10 +91,4 @@ changeLanguage('de');
   height: 20px;
   margin-right: 4px;
 }
-.navbar-brand img {
-  width: auto;
-  height: 50vh; /* Viewport height units */
-  max-height: 200px; /* Optional maximum height */
-}
-
 </style>
