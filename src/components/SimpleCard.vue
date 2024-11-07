@@ -4,7 +4,7 @@
   <div class="card-header">
     Youtube Video
   </div>
-  <iframe width="460" height="245" src="https://www.youtube.com/embed/GQaWi69s-MI?si=LFyIpFct_-a9L4Iq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="391" height="240" src="https://www.youtube.com/embed/GQaWi69s-MI?si=LFyIpFct_-a9L4Iq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <!--<img src="../assets/trailerStill.png" class="card-img-top" alt="maenner foto">-->
   <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
@@ -29,7 +29,11 @@ const props = defineProps({
 .card{
   border-radius: 10px;
   border: 1px solid #727272;
-  
-  margin-top: 80px;;
+  width: 392px;
+
+  margin-top: 30px;;
+}
+.card-body{
+  width: 392px;
 }
 </style>

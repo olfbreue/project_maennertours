@@ -1,43 +1,52 @@
+
 <template>
+  <div class="container-fluid">
 
-<div class="posts-page">
-    <h1>Blog Posts</h1>
-    <PostList />
-  </div>
 
-  <div class="blog-container">
-    <div v-if="user" class="editor-section">
-      <input class="title-input" v-model="title" placeholder="Enter post title..." />
-
-      <div class="toolbar">
-        <button @click="toggleBold" :class="{ active: editor.isActive('bold') }">Bold</button>
-        <button @click="toggleItalic" :class="{ active: editor.isActive('italic') }">Italic</button>
-        <button @click="toggleStrike" :class="{ active: editor.isActive('strike') }">Strike</button>
-        <button @click="toggleCode" :class="{ active: editor.isActive('code') }">Code</button>
-       <!-- <input type="file" @change="insertImage" accept="image/*" />-->
+    <div class="row">
+      <div class="col-lg-5">
+        <PostList />
       </div>
-
-      <editor-content class="tiptap-editor" :editor="editor" />
-      <button class="commit-button" @click="commitPost">{{ isEditing ? 'Update Post' : 'Add Post' }}</button>
     </div>
 
-    <div v-else class="sign-in-message">
-      <p>Please sign in to create posts.</p>
-    </div>
-
-    <!-- Post list -->
-    <ul class="post-list">
-      <li v-for="post in posts" :key="post.id" class="post-item">
-        <h3 class="post-title">{{ post.title }}</h3>
-        <p class="post-date">{{ post.date }}</p>
-        <div class="post-content" v-html="post.content"></div>
-        
-        <div class="post-actions" v-if="user">
-          <button @click="editPost(post)" class="edit-btn">Edit</button>
-          <button @click="deletePost(post.id)" class="delete-btn">Delete</button>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-5">
+        <div class="blog-container">
+          <div v-if="user" class="editor-section">
+            <div class="mb-3">
+              <input class="form-control" v-model="title" placeholder="Enter post title..." />
+            </div>
+            <div class="toolbar mb-3">
+              <button @click="toggleBold" :class="{ active: editor.isActive('bold') }" class="btn btn-secondary">Bold</button>
+              <button @click="toggleItalic" :class="{ active: editor.isActive('italic') }" class="btn btn-secondary">Italic</button>
+              <button @click="toggleStrike" :class="{ active: editor.isActive('strike') }" class="btn btn-secondary">Strike</button>
+              <button @click="toggleCode" :class="{ active: editor.isActive('code') }" class="btn btn-secondary">Code</button>
+            </div>
+            <editor-content class="tiptap-editor" :editor="editor" />
+            <button @click="commitPost" class="btn btn-primary mt-3">{{ isEditing ? 'Update Post' : 'Add Post' }}</button>
+          </div>
+          <div v-else class="sign-in-message">
+            <p class="text-center">Please sign in to create posts.</p>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
+    
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-5">
+        <ul class="post-list">
+          <li v-for="post in posts" :key="post.id" class="post-item">
+            <h3 class="post-title">{{ post.title }}</h3>
+            <p class="post-date">{{ post.date }}</p>
+            <div class="post-content" v-html="post.content"></div>
+            <div class="post-actions" v-if="user">
+              <button @click="editPost(post)" class="btn btn-warning">Edit</button>
+              <button @click="deletePost(post.id)" class="btn btn-danger">Delete</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -173,7 +182,14 @@ onMounted(async () => {
 </script>
 
 
-<style>
+<style scoped>
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  border: 1px solid #9b1d1d;
+  background-image: url("../assets/tarmac.png");
+}
 .blog-container {
   max-width: 800px;
   margin: 0 auto;
@@ -223,7 +239,7 @@ button:hover {
 
 .post-list {
   list-style-type: none;
-  padding: 0;
+  padding: 20px !important;
 }
 
 .post-item {
@@ -271,6 +287,7 @@ button:hover {
   height: auto;
   display: block;
   margin: 10px auto; /* Center the image */
+
 }
 
 .tiptap-editor {
@@ -279,7 +296,7 @@ button:hover {
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 5px;
-
+  color: #333;
 }
 
 button.active {

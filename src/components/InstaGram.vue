@@ -15,7 +15,7 @@ watch(locale, () => {
 </script>
 
 <template>
-  <div class="bg-image rounded-3">
+  <div class="bg-image rounded-3 mt-lg-4">
     <div class="container-fluid">
       <div class="row d-flex justify-content-center" >
         <div class="col-lg-4" >
@@ -52,6 +52,7 @@ watch(locale, () => {
   background-position: center;
   position: relative;
   border: 1px solid #727272;
+  margin:0px 8px 0px 8px;
 }
 .row {
   color: #c0c0c0;
@@ -82,6 +83,7 @@ watch(locale, () => {
   overflow: hidden;
   border: none;
   border-radius:10px;
+  margin-left:9vh;
 }
 
 .instagram-frame::-webkit-scrollbar {

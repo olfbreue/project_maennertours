@@ -1,7 +1,7 @@
 <!-- components/PostList.vue -->
 <template>
 
-<SearchBar />
+
   <div class="posts-container">
   
     
@@ -14,7 +14,7 @@
     </div>
     
     <div v-else-if="!postStore.searchQuery" class="no-results">
-      Enter a search term to find posts
+      
     </div>
     
     <div v-else-if="postStore.searchedPosts.length === 0" class="no-results">

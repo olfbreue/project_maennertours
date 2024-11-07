@@ -2,35 +2,7 @@
 import NavigationBar from '../components/NavigationBar.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const headerTranslate = ref(0);
-const lastScrollPosition = ref(0);
-const headerHeight = ref(0);
 
-const handleScroll = () => {
-  const currentScrollPosition = window.scrollY;
-  const scrollDelta = currentScrollPosition - lastScrollPosition.value;
-  
-  // Update the translation value based on scroll
-  headerTranslate.value = Math.max(
-    Math.min(headerTranslate.value - scrollDelta, 0), // Don't translate down more than 0
-    -(headerHeight.value * 1.5) // Don't translate up more than header height
-  );
-  
-  lastScrollPosition.value = currentScrollPosition;
-};
-
-onMounted(() => {
-  // Get the header height on mount
-  const header = document.querySelector('.fixed-header');
-  if (header) {
-    headerHeight.value = header.offsetHeight;
-  }
-  window.addEventListener('scroll', handleScroll);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
 </script>
 
 <template>
@@ -60,27 +32,33 @@ onUnmounted(() => {
   background-image: url(../assets/Balkantour_cut_bw2.jpg);
   background-size: cover;
   background-position: center;
-  height: 18vh;
+  height: 50px;
   position: relative;
   min-height: 110px;
 }
 
 .centered-logo-container {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  min-height: 110px;
+  min-height: 150px;
 }
 
 img {
-  width:30%;
-
-
+  width:40%;
+  max-width: 440px;
+  margin-bottom: 40px;
 }
 
 .header-spacer {
-  height: calc(18vh + 85px);
+  height: 170px;
+}
+
+@media (max-width: 870px) {
+  .centered-logo-container {
+    width: 650px; /* adjust the value to your needs */
+  }
 }
 </style>

@@ -9,6 +9,8 @@ function changeLanguage(lang) {
 }
 changeLanguage('de');
 
+
+
 </script>
 
 <template>
@@ -70,10 +72,10 @@ changeLanguage('de');
 <style scoped>
 
 .navbar-toggler-icon{
-  margin-right:100px;
+  margin-right:10px;
 }
 .navbar-expand-lg-height-5rem {
-  height: 5.5rem;
+  height: 4.5rem;
   background-image: url("../assets/tarmac.png");
   border-top: 1px solid #c0c0c0;
   border-bottom: 1px solid #c0c0c0;
@@ -111,8 +113,16 @@ changeLanguage('de');
   padding-left:10px;
  
 }
-.collapse{
-  background-color: #343a40;
+.nav-link:hover {
+  color: #6c757d;
 }
-
+.mb-lg-0{
+  background-image: url("../assets/tarmac.png");
+}
+.router-link-active {
+  color: #6c757d !important;
+}
+.nav-link{
+  color:white;
+}
 </style>

@@ -26,12 +26,12 @@ watch(locale, () => {
 
 <template>
 
-<div class="bg-image rounded-3 mt-lg-5">
+<div class="bg-image rounded-3 mt-lg-4">
     <div class="container-fluid">
       <div class="row d-flex justify-content-center" >
        <!-- <div class="col-lg-1"></div>-->
         <div class="col-lg-5">
-          <h1 class="display-4">{{aboutHeader}}</h1>
+          <h1 class="display-6">{{aboutHeader}}</h1>
            <div class="fs-3">
             {{ translatedMessage }}
           </div>

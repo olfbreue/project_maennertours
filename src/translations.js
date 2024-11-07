@@ -1,7 +1,7 @@
 export default {
   en: {
     message: {
- 
+      trackerText: 'Whilst on Tour we have very decent trackers with us from one of our sponsors Autoskope. You can track our position and maybe spot us when we are close...',
       FacebookText: 'Everyone has his preferences when it comes to social media. This is why we alwas post in Facebook and Instagram. We personally highly recommend to check both channels, ' +
                     'as the best of the content is the contribution from the Community. And this community is not identical on both channels.',
       KlamottenShop:'Hoodies und T-Shirts gibts hier im Shop',
@@ -37,7 +37,7 @@ export default {
   },
   de: {
     message: {
-      
+      trackerText: 'Wenn wir auf Tour sind haben wir immer mehrere Tracker von unserem Sponsor Autoscope live. Ihr könnt uns dann auf der Karte verfolgen und mit etwas Glück seht Ihr uns vielleicht wenn wir in der Nähe sind...',
       FacebookText: 'Jeder hat so seine Social Media-Vorlieben, deshalb posten wir immer auf Facebook und Instagram. Es lohnt sich aber auf jeden Fall Beide Kanäle zu abonnieren, ' +
                     'denn das Beste an den Beiträgen sind die Kommentare der Community. Und die ist eben auf beiden channels nicht identisch.',
       KlamottenShop:'Our hoodies and T-shirt selection',

@@ -17,7 +17,7 @@ watch(locale, () => {
 </script>
 
 <template>
-  <div class="bg-image rounded-3">
+  <div class="bg-image rounded-3 mt-lg-4">
     <div class="container-fluid">
       <div class="row d-flex justify-content-center" >
         <div class="col-lg-4" >
@@ -59,6 +59,7 @@ watch(locale, () => {
   background-position: center;
   position: relative;
   border: 1px solid #727272;
+  margin:8px 8px 4px 8px;
 }
 .row {
   color: #c0c0c0;
@@ -78,9 +79,14 @@ watch(locale, () => {
     margin-bottom: 10px;
     overflow:scroll;
     -webkit-overflow-scrolling: touch;
+    margin-left: 7%;
 }
 .list-group-item{
   background-color: #272626e6;
   align-self: auto;
 }
+.list-group{
+  width:455px;
+}
+
 </style>

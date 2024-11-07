@@ -5,29 +5,32 @@ import { ref, watch } from 'vue';
 
 const { t, locale } = useI18n();
 const instaText = ref(t('message.instaText'));
+const trackerText = ref(t('message.trackerText'));
 
 // Watch the locale and update the translated message and video title whenever it changes
 watch(locale, () => {
 
   
     instaText.value = t('message.instaText');
+    trackerText.value = t('message.trackerText');
 });
 </script>
 
 <template>
-  <div class="bg-image rounded-3">
+  <div class="bg-image rounded-3 mt-lg-4">
     <div class="container-fluid">
       <div class="row" >
         <div class="col-lg-2"></div>
         <div class="col-lg-4" >
           <div class="fs-4">
-            {{ instaText }}
+            {{ trackerText }}
           </div>
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-4">
-         
-            <iframe src="https://maennertours.autoskope.de/"></iframe>        
+            <img src="../assets/autoscopeTracker.png" class="img-fluid" alt="Tour Tracker von Autoscope" href="https://maennertours.autoskope.de/" target="_blank">
+           
+                   <p><a class="btn btn-light" href="https://maennertours.autoskope.de/" target="_blank">Hier gehts zum Tour-Tracker</a></p>        
         </div>
       </div>
     </div>
@@ -41,9 +44,10 @@ watch(locale, () => {
                     url(../assets/alpenWechsel.png);
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 100vh;
   position: relative;
   border: 1px solid #727272;
+  margin:0px 8px 8px 8px;
 }
 .row {
   color: #c0c0c0;
@@ -77,5 +81,13 @@ watch(locale, () => {
 
 .instagram-frame::-webkit-scrollbar {
   display: none;
+}
+
+.link-opacity-100-hover{
+  margin-top: 200px;
+}
+
+.btn{
+  margin-top:10px;
 }
 </style>

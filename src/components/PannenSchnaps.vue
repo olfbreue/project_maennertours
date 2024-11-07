@@ -98,7 +98,7 @@ watch(locale, () => {
   border: 1px solid #727272;
 }
 .col-lg-4{
-  padding-top: 4%;
+  padding-top: 30px;
   padding-right: 50px;
 }
 </style>

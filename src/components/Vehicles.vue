@@ -20,7 +20,7 @@ watch(locale, () => {
     <div class="container-fluid">
       <div class="row d-flex justify-content-center" >
         
-        <div class="col-lg-5" >
+        <div class="col-lg-6" >
           <h1 class="display-5">{{vehiclesHeader}}</h1>
           <div class="fs-3">
             {{ karrenText }}
@@ -85,7 +85,7 @@ img{
   padding-bottom: 4%;
 }
 #carouselExampleSlidesOnly{
-  padding-top:12%;
+  padding-top:76px;
   padding-right:10%;
 }
 </style>

@@ -15,7 +15,7 @@ watch(locale, () => {
 </script>
 
 <template>
-  <div class="bg-image rounded-3">
+  <div class="bg-image rounded-3 mt-lg-4">
     <div class="container-fluid">
       <div class="row d-flex justify-content-center" >
         <div class="col-lg-4">
@@ -28,7 +28,7 @@ watch(locale, () => {
         <div class="col-lg-1"></div>
         <div class="col-lg-4">
          
-            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmaennertours%2Fposts%2Fpfbid02ir6kMMXN1xG3HsmX6o1HVmvx6SDqjTwZtXV4dACRVxxtX5JQdmUYGDa1CcGoWDAdl&show_text=true&width=500" width="847" height="386" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>        </div>
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmaennertours%2Fposts%2Fpfbid02ir6kMMXN1xG3HsmX6o1HVmvx6SDqjTwZtXV4dACRVxxtX5JQdmUYGDa1CcGoWDAdl&show_text=true&width=500" width="540" height="386" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>        </div>
       </div>
     </div>
   </div>
@@ -43,6 +43,7 @@ watch(locale, () => {
   background-position: center;
   position: relative;
   border: 1px solid #727272;
+  margin:0px 8px 8px 8px;
 }
 .row {
   color: #c0c0c0;
@@ -67,16 +68,7 @@ watch(locale, () => {
   background-color: #272626e6;
   align-self: auto;
 }
-.instagram-frame {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  overflow: hidden;
-  border: none;
-  border-radius:10px;
-  padding-top:80px;
-}
-
-.instagram-frame::-webkit-scrollbar {
-  display: none;
+iframe{
+  margin-top:30px;
 }
 </style>

@@ -1,6 +1,8 @@
 <!-- components/SearchBar.vue -->
 <template>
-  <div class="search-container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+  
     <input
       v-model="searchInput"
       type="text"
@@ -10,7 +12,9 @@
     <button v-if="searchInput" @click="clearSearch">
       Clear
     </button>
-  </div>
+  
+</div>
+</div>
 </template>
 
 <script setup>
@@ -33,15 +37,22 @@ const clearSearch = () => {
 <style scoped>
 .search-container {
   margin: 1rem 0;
+  
 }
 
 input {
   padding: 8px;
   width: 200px;
   margin-right: 10px;
+  border-radius: 4px;
 }
 
 button {
   padding: 8px 16px;
+}
+.col-md-5{
+  padding-left: 37px;
+  padding-top: 80px;
+ 
 }
 </style>

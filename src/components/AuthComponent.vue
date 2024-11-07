@@ -1,5 +1,11 @@
 <!-- AuthComponent.vue -->
 <template>
+      <div class="container-fluid">
+
+      <div class="row justify-content-center">
+       
+
+        <div class="col-md-5">
   <div class="loginArea">
     <form @submit.prevent>
       <div class="form-group mb-3">
@@ -26,6 +32,11 @@
       <p v-if="user" class="mt-3">Signed in as: {{ user.email }}</p>
     </form>
   </div>
+  </div>
+  </div>
+</div>
+<div class="col-md-4"></div>
+
 </template>
   
   <script setup>
@@ -77,7 +88,7 @@
 
   <style scoped>
   .loginArea{
-    padding:100px 20px 20px 20px; 
+    padding:50px 20px 20px 20px; 
    }
    input {
   width: 100%;
