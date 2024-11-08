@@ -1,38 +1,52 @@
-<!-- components/SearchBar.vue -->
 <template>
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-5">
-  
-    <input
-      v-model="searchInput"
-      type="text"
-      placeholder="Search posts..."
-      @input="handleSearch"
-    />
-    <button v-if="searchInput" @click="clearSearch">
-      Clear
-    </button>
-  
-</div>
-</div>
+  <!-- 
+    Container for the search bar.
+  -->
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+      <!-- 
+        Input field for the search bar.
+      -->
+      <input
+        v-model="searchInput"
+        type="text"
+        placeholder="Search posts..."
+        @input="handleSearch"
+      />
+      <!-- 
+        Button to clear the search input.
+      -->
+      <button v-if="searchInput" @click="clearSearch">
+        Clear
+      </button>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { usePostStore } from '@/stores/postStore';
+  // Import necessary Vue functions
+  import { ref } from 'vue';
+  import { usePostStore } from '@/stores/postStore';
 
-const postStore = usePostStore();
-const searchInput = ref('');
+  // Initialize post store
+  const postStore = usePostStore();
+  const searchInput = ref('');
 
-const handleSearch = () => {
-  postStore.setSearchQuery(searchInput.value);
-};
+  // Function to handle search input
+  const handleSearch = () => {
+    postStore.setSearchQuery(searchInput.value);
+  };
 
-const clearSearch = () => {
-  searchInput.value = '';
-  postStore.setSearchQuery('');
-};
+  // Function to clear the search input
+  const clearSearch = () => {
+    searchInput.value = '';
+    postStore.setSearchQuery('');
+  };
 </script>
+
+<!-- 
+  Styles for the search bar.
+-->
 
 <style scoped>
 .search-container {

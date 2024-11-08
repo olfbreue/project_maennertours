@@ -1,5 +1,4 @@
 <script setup>
-import SimpleCard from '../components/SimpleCard.vue';
 import { useI18n } from 'vue-i18n';
 import { ref, watch } from 'vue';
 import YouTube from '../components/YouTube.vue';
@@ -26,17 +25,7 @@ watch(locale, () => {
 </template>
 
 <style scoped>
-/*
-.bg-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                    url(../assets/challenges.JPG);
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  position: relative;
-  border: 1px solid #727272;
-}
-  */
+
 .row {
   color: #c0c0c0;
   z-index: 1000;

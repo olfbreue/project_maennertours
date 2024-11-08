@@ -25,10 +25,9 @@ const props = defineProps({
   image: String,
   text: String,
   btntext: String,
-  btnlink: String, // Add btnlink as a prop
+  btnlink: String, // Adding btnlink as a prop here
 });
 
-//console.log('Vehicle Card s Image prop value:', props.image)
 
 </script>
 

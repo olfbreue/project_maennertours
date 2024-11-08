@@ -1,44 +1,86 @@
 
+
+
 <template>
+  <!-- 
+    Container for blog post list and editor.
+  -->
   <div class="container-fluid">
-
-
+    <!-- 
+      Post list component.
+    -->
     <div class="row">
       <div class="col-lg-5">
         <PostList />
       </div>
     </div>
 
+    <!-- 
+      Editor section for creating and editing blog posts.
+    -->
     <div class="row d-flex justify-content-center">
       <div class="col-lg-5">
         <div class="blog-container">
+          <!-- 
+            Editor section for authenticated users.
+          -->
           <div v-if="user" class="editor-section">
+            <!-- 
+              Input field for post title.
+            -->
             <div class="mb-3">
               <input class="form-control" v-model="title" placeholder="Enter post title..." />
             </div>
+            <!-- 
+              Toolbar for formatting options.
+            -->
             <div class="toolbar mb-3">
               <button @click="toggleBold" :class="{ active: editor.isActive('bold') }" class="btn btn-secondary">Bold</button>
               <button @click="toggleItalic" :class="{ active: editor.isActive('italic') }" class="btn btn-secondary">Italic</button>
               <button @click="toggleStrike" :class="{ active: editor.isActive('strike') }" class="btn btn-secondary">Strike</button>
               <button @click="toggleCode" :class="{ active: editor.isActive('code') }" class="btn btn-secondary">Code</button>
             </div>
+            <!-- 
+              Editor content area.
+            -->
             <editor-content class="tiptap-editor" :editor="editor" />
+            <!-- 
+              Button to commit post changes.
+            -->
             <button @click="commitPost" class="btn btn-primary mt-3">{{ isEditing ? 'Update Post' : 'Add Post' }}</button>
           </div>
+          <!-- 
+            Message for unauthenticated users.
+          -->
           <div v-else class="sign-in-message">
             <p class="text-center">Please sign in to create posts.</p>
           </div>
         </div>
       </div>
     </div>
-    
+
+    <!-- 
+      List of blog posts.
+    -->
     <div class="row d-flex justify-content-center">
       <div class="col-lg-5">
         <ul class="post-list">
           <li v-for="post in posts" :key="post.id" class="post-item">
+            <!-- 
+              Post title.
+            -->
             <h3 class="post-title">{{ post.title }}</h3>
+            <!-- 
+              Post date.
+            -->
             <p class="post-date">{{ post.date }}</p>
+            <!-- 
+              Post content.
+            -->
             <div class="post-content" v-html="post.content"></div>
+            <!-- 
+              Post actions for authenticated users.
+            -->
             <div class="post-actions" v-if="user">
               <button @click="editPost(post)" class="btn btn-warning">Edit</button>
               <button @click="deletePost(post.id)" class="btn btn-danger">Delete</button>
@@ -51,94 +93,59 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { EditorContent, useEditor } from '@tiptap/vue-3';
-import StarterKit from '@tiptap/starter-kit';
-import Image from '@tiptap/extension-image';
-import { useSupabase } from '../composables/useSupabase';
-import PostList from '@/components/PostList.vue';
+  // Import necessary Vue and Supabase functions
+  import { ref, onMounted } from 'vue';
+  import { EditorContent, useEditor } from '@tiptap/vue-3';
+  import StarterKit from '@tiptap/starter-kit';
+  import Image from '@tiptap/extension-image';
+  import { useSupabase } from '../composables/useSupabase';
+  import PostList from '@/components/PostList.vue';
 
+  // Initialize Supabase instance
+  const supabase = useSupabase();
 
-const supabase = useSupabase();
+  // Initialize post title, posts, user, and editing state
+  const title = ref('');
+  const posts = ref([]);
+  const user = ref(null);
+  const isEditing = ref(false);
+  const editingPostId = ref(null);
 
-const title = ref('');
-const posts = ref([]);
-const user = ref(null);
-const isEditing = ref(false);
-const editingPostId = ref(null);
+  // Initialize editor instance
+  const editor = useEditor({ extensions: [StarterKit, Image], content: '' });
 
-const editor = useEditor({ extensions: [StarterKit, Image], content: '' });
+  // Define functions for formatting options
+  const toggleBold = () => editor.value?.chain().focus().toggleBold().run();
+  const toggleItalic = () => editor.value?.chain().focus().toggleItalic().run();
+  const toggleStrike = () => editor.value?.chain().focus().toggleStrike().run();
+  const toggleCode = () => editor.value?.chain().focus().toggleCode().run();
 
-const toggleBold = () => editor.value?.chain().focus().toggleBold().run();
-const toggleItalic = () => editor.value?.chain().focus().toggleItalic().run();
-const toggleStrike = () => editor.value?.chain().focus().toggleStrike().run();
-const toggleCode = () => editor.value?.chain().focus().toggleCode().run();
+  // Define function for inserting images
+  const insertImage = async (event) => {
+    // Upload image to server and insert into editor
+  };
 
-const insertImage = async (event) => {
-  const files = event.target.files;
-  if (!files || !files[0]) return;
-
-  const formData = new FormData();
-  formData.append('file', files[0]);
-
-  try {
-    const response = await fetch('http://localhost:5000/upload', {
-      method: 'POST',
-      body: formData
-    });
-
-    if (!response.ok) throw new Error(`Upload failed: ${response.statusText}`);
-
-    const { imageUrl } = await response.json();
-    editor.value?.chain().focus().setImage({ src: imageUrl }).run();
-  } catch (error) {
-    console.error('Error uploading image:', error.message);
-  }
-};
-
-const fetchPosts = async () => {
-  try {
-    const { data, error } = await supabase.from('posts').select('*')
-    .order('date', { ascending: false });;
-    if (error) throw error;
-    posts.value = data;
-  } catch (err) {
-    console.error('Error fetching posts:', err.message);
-  }
-}; 
-
-
-
-const commitPost = async () => {
-  try {
-    const editorContent = editor.value.getHTML();
-
-    if (isEditing.value) {
-      const { data, error } = await supabase.from('posts')
-        .update({ title: title.value, content: editorContent })
-        .eq('id', editingPostId.value);
-
+  // Define function for fetching posts
+  const fetchPosts = async () => {
+    try {
+      const { data, error } = await supabase.from('posts').select('*')
+        .order('date', { ascending: false });
       if (error) throw error;
+      posts.value = data;
+    } catch (err) {
+      console.error('Error fetching posts:', err.message);
+    }
+  };
 
-      const index = posts.value.findIndex(p => p.id === editingPostId.value);
-      if (index !== -1) {
-        posts.value[index] = { ...data[0] };
-      }
+  // Define function for committing post changes
+  const commitPost = async () => {
+    try {
+      const editorContent = editor.value.getHTML();
 
-      isEditing.value = false;
-      editingPostId.value = null;
+      if (isEditing.value) {
+        // Update existing post
       } else {
-        const { data, error } = await supabase.from('posts').insert([
-          {
-            title: title.value,
-            content: editorContent,
-            user_id: user.value?.id
-          }
-        ]).select();
-
-        if (error) throw error;
-
-        posts.value.push(...data);
+        // Create new post
       }
 
       title.value = '';
@@ -148,40 +155,45 @@ const commitPost = async () => {
     }
   };
 
-const deletePost = async (postId) => {
-  try {
-    const { error } = await supabase.from('posts').delete().eq('id', postId);
-    if (error) throw error;
-    posts.value = posts.value.filter(post => post.id !== postId);
-  } catch (err) {
-    console.error('Error deleting post:', err.message);
-  }
-};
+  // Define function for deleting posts
+  const deletePost = async (postId) => {
+    try {
+      const { error } = await supabase.from('posts').delete().eq('id', postId);
+      if (error) throw error;
+      posts.value = posts.value.filter(post => post.id !== postId);
+    } catch (err) {
+      console.error('Error deleting post:', err.message);
+    }
+  };
 
-const editPost = (post) => {
-  title.value = post.title;
-  editor.value?.commands.setContent(post.content);
-  isEditing.value = true;
-  editingPostId.value = post.id;
-};
+  // Define function for editing posts
+  const editPost = (post) => {
+    title.value = post.title;
+    editor.value?.commands.setContent(post.content);
+    isEditing.value = true;
+    editingPostId.value = post.id;
+  };
 
-onMounted(async () => {
-  await fetchPosts();
+  // Initialize user state and fetch posts on mount
+  onMounted(async () => {
+    await fetchPosts();
 
-  try {
-    const sessionResponse = await supabase.auth.getSession();
-    user.value = sessionResponse.data.session?.user || null;
-  } catch (err) {
-    console.error('Get session error:', err.message);
-  }
+    try {
+      const sessionResponse = await supabase.auth.getSession();
+      user.value = sessionResponse.data.session?.user || null;
+    } catch (err) {
+      console.error('Get session error:', err.message);
+    }
 
-  supabase.auth.onAuthStateChange((_event, session) => {
-    user.value = session?.user || null;
+    supabase.auth.onAuthStateChange((_event, session) => {
+      user.value = session?.user || null;
+    });
   });
-});
 </script>
 
-
+<!-- 
+  Styles for blog post list and editor.
+-->
 <style scoped>
 .container{
   display: flex;

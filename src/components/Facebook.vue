@@ -19,7 +19,7 @@ watch(locale, () => {
     <div class="container-fluid">
       <div class="row d-flex justify-content-center" >
         <div class="col-lg-4">
-            <h1 class="display-3">Facebook</h1>
+            <h1 class="display-5">Facebook</h1>
 
           <div class="fs-4">
             {{ FacebookText }}
@@ -33,6 +33,8 @@ watch(locale, () => {
     </div>
   </div>
 </template>
+
+<!-- Some styling for the facebook part-->
 
 <style scoped>
 .bg-image
@@ -54,7 +56,7 @@ watch(locale, () => {
 .fs-4 {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
-  padding: 40px;
+  padding: 60px;
   text-align: center;
   border: 1px solid #727272;
 }

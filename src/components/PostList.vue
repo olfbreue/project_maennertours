@@ -1,27 +1,39 @@
-<!-- components/PostList.vue -->
 <template>
-
-
+  <!-- 
+    Container for the posts.
+  -->
   <div class="posts-container">
-  
-    
+    <!-- 
+      Error message if there is an error loading posts.
+    -->
     <div v-if="postStore.error" class="error-message">
       Error loading posts: {{ postStore.error }}
     </div>
-    
+    <!-- 
+      Loading message if posts are being loaded.
+    -->
     <div v-if="postStore.isSearching" class="loading">
       Loading posts...
     </div>
-    
+    <!-- 
+      No results message if no posts are found.
+    -->
     <div v-else-if="!postStore.searchQuery" class="no-results">
       
     </div>
-    
+    <!-- 
+      No results message if no posts are found matching the search query.
+    -->
     <div v-else-if="postStore.searchedPosts.length === 0" class="no-results">
       No posts found matching your search
     </div>
-    
+    <!-- 
+      Grid of posts if posts are found.
+    -->
     <div v-else class="posts-grid">
+      <!-- 
+        Loop through each post and display its title and content.
+      -->
       <div v-for="post in postStore.searchedPosts" 
            :key="post.id" 
            class="post-card">
@@ -33,24 +45,31 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
-import { usePostStore } from '@/stores/postStore';
-import { storeToRefs } from 'pinia';
-import SearchBar from './SearchBar.vue';
+  // Import necessary Vue functions
+  import { onMounted } from 'vue';
+  import { usePostStore } from '@/stores/postStore';
+  import { storeToRefs } from 'pinia';
+  import SearchBar from './SearchBar.vue';
 
-const postStore = usePostStore();
-const { posts, searchedPosts } = storeToRefs(postStore);
+  // Initialize post store
+  const postStore = usePostStore();
+  const { posts, searchedPosts } = storeToRefs(postStore);
 
-// Function to strip HTML tags
-const stripHtml = (html) => {
-  if (!html) return '';
-  return html.replace(/<\/?[^>]+(>|$)/g, '');
-};
+  // Function to strip HTML tags
+  const stripHtml = (html) => {
+    if (!html) return '';
+    return html.replace(/<\/?[^>]+(>|$)/g, '');
+  };
 
-onMounted(async () => {
-  await postStore.fetchPosts();
-});
+  // Fetch posts when the component is mounted
+  onMounted(async () => {
+    await postStore.fetchPosts();
+  });
 </script>
+
+<!-- 
+  Styles for the posts.
+-->
 
 <style scoped>
 .posts-container {

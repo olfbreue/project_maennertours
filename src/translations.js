@@ -57,7 +57,7 @@ export default {
       aboutVideoTitle: 'Was ist Männertours?',
       aboutVideoText: 'Die Geschichte von Männertours in unter drei Minuten... Ein kurzes Video wie alles begann und was es mit unseren Touren auf sich hat...',
       vehicleCardText: 'Unsere Karren...',
-      vehiclesHeader: 'Die Herausvorderungen vor jeder Tour...',
+      vehiclesHeader: 'Die Herausforderungen vor jeder Tour...',
       pannenHeader: 'Tradition und Merch',
       pannenSchnapsText: 'Tradition verpflichtet... so wie der Pannenschnaps. Eine Pflichtübung bei jeder Panne... ' +
                         'Mittlerweile wird der Pannenschnaps von der Community gestiftet und nur die wirklich ekelhaftesten ' +

@@ -1,57 +1,96 @@
+
+Vue
+Insert code
+
+<!-- 
+  NavigationBar.vue: Handles navigation and language selection.
+-->
+
 <script setup>
+  // Import necessary Vue functions
+  import { useI18n } from 'vue-i18n';
 
-import { useI18n } from 'vue-i18n';
-const { locale } = useI18n();
+  // Initialize i18n instance
+  const { locale } = useI18n();
 
-function changeLanguage(lang) {
-  locale.value = lang;
-  console.log("Language:" + lang);
-}
-changeLanguage('de');
+  // Define function to change language
+  function changeLanguage(lang) {
+    // Update locale value
+    locale.value = lang;
+    console.log("Language:" + lang);
+  }
 
-
-
+  // Set default language to German
+  changeLanguage('de');
 </script>
 
 <template>
-   
-
+  <!-- 
+    Navigation bar container.
+  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-lg-height-5rem">
     <div class="container-fluid">
-     <a class="navbar-brand">
+      <!-- 
+        Logo image.
+      -->
+      <a class="navbar-brand">
         <img class="logo navbar-expand-lg" src="@/assets/Alles_weiss_Logo_1.png">
-      </a> 
+      </a>
+      <!-- 
+        Toggle button for mobile devices.
+      -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <!-- 
+        Navigation links.
+      -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mb- mx- mb-lg-0 ms-auto">
+          <!-- 
+            Home link.
+          -->
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
           </li>
+          <!-- 
+            Social Media link.
+          -->
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/SocialMedia">Social Media</router-link>
           </li>
+          <!-- 
+            Blog link.
+          -->
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/BlogView">Blog</router-link>
           </li>
-        <!--  <li class="nav-item">
-            <a class="nav-link" href="#">Kontakt</a>
-          </li> -->
+          <!-- 
+            Tour-Tracker link.
+          -->
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/TourTracker">Tour-Tracker</router-link>
           </li>
+          <!-- 
+            Language selection dropdown.
+          -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Languages
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
+              <!-- 
+                German language option.
+              -->
               <li>
                 <a class="dropdown-item" href="#" @click="changeLanguage('de')">
                   <img src="../assets/de.png" alt="German" class="me-1">
                   German
                 </a>
               </li>
+              <!-- 
+                English language option.
+              -->
               <li>
                 <a class="dropdown-item" href="#" @click="changeLanguage('en')">
                   <img src="../assets/en.png" alt="English" class="me-1">
@@ -60,13 +99,10 @@ changeLanguage('de');
               </li>
             </ul>
           </li>
-         
         </ul>
       </div>
     </div>
   </nav>
-
-
 </template>
 
 <style scoped>
@@ -120,7 +156,7 @@ changeLanguage('de');
   background-image: url("../assets/tarmac.png");
 }
 .router-link-active {
-  color: #6c757d !important;
+  color: #f8ffb8 !important;
 }
 .nav-link{
   color:white;

@@ -29,10 +29,9 @@ watch(locale, () => {
 <div class="bg-image rounded-3 mt-lg-4">
     <div class="container-fluid">
       <div class="row d-flex justify-content-center" >
-       <!-- <div class="col-lg-1"></div>-->
-        <div class="col-lg-5">
+        <div class="col-lg-4">
           <h1 class="display-6">{{aboutHeader}}</h1>
-           <div class="fs-3">
+           <div class="fs-4">
             {{ translatedMessage }}
           </div>
         </div>
@@ -57,7 +56,6 @@ watch(locale, () => {
                     url(../assets/middle_of_the_road.jpg);
   background-size: cover;
   background-position: center;
-  /*height: 90vh; */
   position: relative;
   border: 1px solid #727272;
   margin:8px 8px 8px 8px;
@@ -69,10 +67,10 @@ watch(locale, () => {
   padding-top: 4%;
   padding-bottom: 4%;
 }
-.fs-3 {
+.fs-4 {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
-  padding: 40px;
+  padding: 60px;
   text-align: center;
   border: 1px solid #727272;
 }

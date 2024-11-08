@@ -1,54 +1,125 @@
 <script setup>
-import VehicleCards from './VehicleCards.vue';
-import { useI18n } from 'vue-i18n';
-import { ref, watch } from 'vue';
+  // Import necessary Vue functions and components
+  import VehicleCards from './VehicleCards.vue';
+  import { useI18n } from 'vue-i18n';
+  import { ref, watch } from 'vue';
 
-const { t, locale } = useI18n();
-const karrenText = ref(t('message.karrenText'));
-const vehiclesHeader = ref(t('message.vehiclesHeader'));
+  // Initialize i18n and locale
+  const { t, locale } = useI18n();
 
+  // Initialize translated text
+  const karrenText = ref(t('message.karrenText'));
+  const vehiclesHeader = ref(t('message.vehiclesHeader'));
 
-// Watch the locale and update the translated message whenever it changes
-watch(locale, () => {
-  karrenText.value = t('message.karrenText');
-  vehiclesHeader.value = t('message.vehiclesHeader');
-});
+  // Watch the locale and update the translated text whenever it changes
+  watch(locale, () => {
+    karrenText.value = t('message.karrenText');
+    vehiclesHeader.value = t('message.vehiclesHeader');
+  });
 </script>
 
 <template>
+  <!-- 
+    Container with a background image.
+  -->
   <div class="bg-image rounded-3">
+    <!-- 
+      Container for the content.
+    -->
     <div class="container-fluid">
-      <div class="row d-flex justify-content-center" >
-        
-        <div class="col-lg-6" >
-          <h1 class="display-5">{{vehiclesHeader}}</h1>
-          <div class="fs-3">
+      <!-- 
+        Row with two columns.
+      -->
+      <div class="row d-flex justify-content-center">
+        <!-- 
+          First column with text.
+        -->
+        <div class="col-lg-4">
+          <!-- 
+            Header text.
+          -->
+          <h1 class="display-5">{{ vehiclesHeader }}</h1>
+          <!-- 
+            Text with a background color and padding.
+          -->
+          <div class="fs-4">
             {{ karrenText }}
           </div>
         </div>
+        <!-- 
+          Second column with a carousel.
+        -->
         <div class="col-lg-1"></div>
-        <div class="col-lg-4">
-          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="col-lg-5">
+
+<!-- 
+  Carousel with images.
+-->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
+    <!-- 
+      Carousel items with images.
+    -->
     <div class="carousel-item active">
-      <img src="../assets/carousel_images/AWS.png" class="d-block w-100" alt="...">
+      <div class="image-frame">
+        <img src="../assets/carousel_images/AWS.png" class="d-block w-100" alt="...">
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="../assets/carousel_images/Buggy.png" class="d-block w-100" alt="...">
+      <div class="image-frame">
+        <img src="../assets/carousel_images/Buggy.png" class="d-block w-100" alt="...">
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="../assets/carousel_images/Fiat.png" class="d-block w-100" alt="...">
+      <div class="image-frame">
+        <img src="../assets/carousel_images/Fiat.png" class="d-block w-100" alt="...">
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="../assets/carousel_images/Hercules.png" class="d-block w-100" alt="...">
+      <div class="image-frame">
+        <img src="../assets/carousel_images/Hercules.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="image-frame">
+        <img src="../assets/carousel_images/HondaChopper.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="image-frame">
+        <img src="../assets/carousel_images/Opel.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="image-frame">
+        <img src="../assets/carousel_images/Reliant.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="image-frame">
+        <img src="../assets/carousel_images/Simson.png" class="d-block w-100" alt="...">
+      </div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<!-- 
+  Styles for the component.
+-->
 
 <style scoped>
 .bg-image
@@ -64,18 +135,19 @@ watch(locale, () => {
 
 }
 .container-fluid {
-  padding: 20px;
+  padding: 10px;
 }
-.fs-3 {
+.fs-4 {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
-  padding: 40px;
+  padding: 60px;
   text-align: center;
   border: 1px solid #727272;
 }
 img{
-  max-width: 625px;
-  max-height: 370px;
+  width: 625px;
+  height: 360px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .row {
@@ -83,9 +155,28 @@ img{
   z-index: 1000;
   padding-top: 4%;
   padding-bottom: 4%;
+    display: flex;
+  align-items: center;
 }
 #carouselExampleSlidesOnly{
-  padding-top:76px;
+  width: 785px;
   padding-right:10%;
+  padding-left:10%;
+}
+.image-frame {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #727272;
+  width: 580px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.col-lg-5{
+  padding-top:130px;
 }
 </style>

@@ -1,47 +1,58 @@
 <script setup>
-import { useI18n } from 'vue-i18n';
-import { ref, watch } from 'vue';
+  // Import necessary Vue functions
+  import { useI18n } from 'vue-i18n';
+  import { ref, watch } from 'vue';
 
+  // Initialize i18n instance
+  const { t, locale } = useI18n();
 
-const { t, locale } = useI18n();
-const instaText = ref(t('message.instaText'));
+  // Initialize translated message
+  const instaText = ref(t('message.instaText'));
 
-// Watch the locale and update the translated message and video title whenever it changes
-watch(locale, () => {
-
-  
+  // Watch the locale and update the translated message whenever it changes
+  watch(locale, () => {
     instaText.value = t('message.instaText');
-});
+  });
 </script>
 
 <template>
+  <!-- 
+    Container for the Instagram page.
+  -->
   <div class="bg-image rounded-3 mt-lg-4">
     <div class="container-fluid">
-      <div class="row d-flex justify-content-center" >
-        <div class="col-lg-4" >
-          <h1 class="display-3">Instagram</h1>
-
+      <div class="row d-flex justify-content-center">
+        
+        <div class="col-lg-4">
+          <div class="display-5">Instagram</div>
           <div class="fs-4">
+
             {{ instaText }}
           </div>
         </div>
         <div class="col-lg-1"></div>
-        <div class="col-lg-4">
-         
-            <iframe 
-    src="https://www.instagram.com/maennertours/embed" 
-    height="470" 
-    width="400"
-    frameborder="0"
-    scrolling="no"
-    class="instagram-frame"
-  ></iframe>
-           
+        <div class="col-lg-3">
+          <!-- 
+            Instagram iframe.
+          -->
+          <iframe
+            src="https://www.instagram.com/maennertours/embed"
+            height="470"
+            width="400"
+            frameborder="0"
+            scrolling="no"
+            class="instagram-frame"
+          ></iframe>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<!-- 
+  Styles for the Instagram page.
+-->
+
 
 <style scoped>
 .bg-image
@@ -63,7 +74,7 @@ watch(locale, () => {
 .fs-4 {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
-  padding: 40px;
+  padding: 60px;
   text-align: center;
   border: 1px solid #727272;
 }
