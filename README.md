@@ -1,6 +1,17 @@
-# blog-vue-supabase
+# Männertours Blog
 
-This template should help get you started developing with Vue 3 in Vite.
+A blog website built with Vue 3 and Supabase.
+
+## Overview
+
+This project is a blog website that showcases the adventures of Männertours. It features a responsive design, easy-to-use interface, and a robust backend powered by Supabase.
+
+## Features
+
+* Responsive design for optimal viewing on desktop and mobile devices
+* Easy-to-use interface for navigating through blog posts and videos
+* Robust backend powered by Supabase for storing and retrieving data
+* Support for multiple languages using Vue I18n
 
 ## Recommended IDE Setup
 
@@ -14,16 +25,14 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 
 ```sh
 npm install
-```
 
-### Compile and Hot-Reload for Development
+Contributing
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
 
-```sh
-npm run dev
-```
+License
+This project is licensed under the MIT License.
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Acknowledgments
+Vue 3
+Supabase
+Vite

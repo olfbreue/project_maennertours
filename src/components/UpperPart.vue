@@ -49,7 +49,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 img {
   width:40%;
   max-width: 440px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .header-spacer {
