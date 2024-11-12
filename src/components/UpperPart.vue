@@ -9,7 +9,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
   <div class="fixed-header" :style="{ transform: `translateY(${headerTranslate}px)` }">
     <div class="bg-image mx-2">
       <div class="centered-logo-container">
-        <img src="@\assets\logo-Teil1t-weiss.png" alt="logo">
+        <img src="@\assets\logoTeil1tweiss.png" alt="logo">
       </div>
     </div>
     <NavigationBar></NavigationBar>

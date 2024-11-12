@@ -9,6 +9,7 @@ import NotFound from "@/views/NotFound.vue"
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
+    mode: 'hash',
     routes: [
       {
         path: '/',
@@ -16,6 +17,7 @@ const router = createRouter({
         component: HomeView
       },
       {
+       
         path: '/SocialMedia',
         name: 'SocialMedia',
         component: SocialMedia

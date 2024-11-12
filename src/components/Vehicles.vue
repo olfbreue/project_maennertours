@@ -1,21 +1,21 @@
 <script setup>
-  // Import necessary Vue functions and components
-  import VehicleCards from './VehicleCards.vue';
-  import { useI18n } from 'vue-i18n';
-  import { ref, watch } from 'vue';
+// Import necessary Vue functions and components
+import VehicleCards from './VehicleCards.vue';
+import { useI18n } from 'vue-i18n';
+import { ref, watch } from 'vue';
 
-  // Initialize i18n and locale
-  const { t, locale } = useI18n();
+// Initialize i18n and locale
+const { t, locale } = useI18n();
 
-  // Initialize translated text
-  const karrenText = ref(t('message.karrenText'));
-  const vehiclesHeader = ref(t('message.vehiclesHeader'));
+// Initialize translated text
+const karrenText = ref(t('message.karrenText'));
+const vehiclesHeader = ref(t('message.vehiclesHeader'));
 
-  // Watch the locale and update the translated text whenever it changes
-  watch(locale, () => {
-    karrenText.value = t('message.karrenText');
-    vehiclesHeader.value = t('message.vehiclesHeader');
-  });
+// Watch the locale and update the translated text whenever it changes
+watch(locale, () => {
+  karrenText.value = t('message.karrenText');
+  vehiclesHeader.value = t('message.vehiclesHeader');
+});
 </script>
 
 <template>
@@ -52,69 +52,72 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
 
-<!-- 
-  Carousel with images.
--->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <!-- 
-      Carousel items with images.
-    -->
-    <div class="carousel-item active">
-      <div class="image-frame">
-        <img src="../assets/carousel_images/AWS.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="image-frame">
-        <img src="../assets/carousel_images/Buggy.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="image-frame">
-        <img src="../assets/carousel_images/Fiat.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="image-frame">
-        <img src="../assets/carousel_images/Hercules.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="image-frame">
-        <img src="../assets/carousel_images/HondaChopper.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="image-frame">
-        <img src="../assets/carousel_images/Opel.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="image-frame">
-        <img src="../assets/carousel_images/Reliant.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="image-frame">
-        <img src="../assets/carousel_images/Simson.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+          <!--  Carousel with images-->
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!--  Carousel items with images -->
+              <div class="carousel-item active">
+                <div class="image-frame">
+                  <img src="../assets/carousel_images/AWS.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="image-frame">
+                  <img src="../assets/carousel_images/Buggy.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="image-frame">
+                  <img src="../assets/carousel_images/Fiat.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="image-frame">
+                  <img src="../assets/carousel_images/Hercules.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="image-frame">
+                  <img src="../assets/carousel_images/HondaChopper.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="image-frame">
+                  <img src="../assets/carousel_images/Opel.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="image-frame">
+                  <img src="../assets/carousel_images/Reliant.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="image-frame">
+                  <img src="../assets/carousel_images/Simson.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
 
         </div>
+
+
+
       </div>
     </div>
   </div>
+
 </template>
 
 <!-- 
@@ -122,21 +125,29 @@
 -->
 
 <style scoped>
-.bg-image
-{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                    url(../assets/schrottkarren.JPG);
-  background-size: cover;
-  background-position: center;
- 
-  position: relative;
-  border: 1px solid #727272;
-  margin:4px 8px 4px 8px;
+#carouselExampleSlidesOnly{
+
+  padding-bottom:0px !important;
 
 }
+.bg-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../assets/schrottkarren.JPG);
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  border: 1px solid #727272;
+  margin: 4px 8px 4px 8px;
+
+}
+
 .container-fluid {
   padding: 10px;
+    margin-bottom:0px !important;
+
 }
+
 .fs-4 {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 80px 10px 80px;
@@ -144,7 +155,8 @@
   text-align: center;
   border: 1px solid #727272;
 }
-img{
+
+img {
   width: 625px;
   height: 360px;
   border-radius: 10px 10px 10px 10px;
@@ -155,28 +167,25 @@ img{
   z-index: 1000;
   padding-top: 4%;
   padding-bottom: 4%;
-    display: flex;
+  display: flex;
   align-items: center;
 }
-#carouselExampleSlidesOnly{
-  width: 785px;
-  padding-right:10%;
-  padding-left:10%;
-}
-.image-frame {
+
+.carousel {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px 10px 10px 10px;
   padding: 10px;
   text-align: center;
   border: 1px solid #727272;
-  width: 580px;
+  width: 620px;
   height: 380px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
 }
-.col-lg-5{
-  padding-top:130px;
+
+.col-lg-5 {
+ 
+  width: 30%;
+ 
+
+
 }
 </style>
