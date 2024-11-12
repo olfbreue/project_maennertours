@@ -137,23 +137,55 @@
     }
   };
 
-  // Define function for committing post changes
   const commitPost = async () => {
-    try {
-      const editorContent = editor.value.getHTML();
+  try {
+    const editorContent = editor.value.getHTML();
 
-      if (isEditing.value) {
-        // Update existing post
-      } else {
-        // Create new post
+    if (isEditing.value) {
+      // Ensure the title and content are defined and correct
+      const { data, error } = await supabase.from('posts')
+        .update({
+          title: title.value,
+          content: editorContent
+        })
+        .eq('id', editingPostId.value) // Ensure you're updating with the correct ID
+        .select();
+
+      if (error) throw error;
+
+      const index = posts.value.findIndex(p => p.id === editingPostId.value);
+      if (index !== -1) {
+        posts.value[index] = { ...data[0] };
       }
 
-      title.value = '';
-      editor.value.commands.clearContent();
-    } catch (err) {
-      console.error('Error committing post:', err.message);
+      // Reset editing state
+      isEditing.value = false;
+      editingPostId.value = null;
+    } else {
+      const { data, error } = await supabase.from('posts').insert([
+        {
+          title: title.value,
+          content: editorContent,
+          user_id: user.value?.id // Ensure user ID is included if required
+        }
+      ]).select();
+
+      if (error) throw error;
+
+      posts.value.push(...data);
     }
-  };
+
+    // Reset input fields and editor content
+    title.value = '';
+    editor.value.commands.clearContent();
+  } catch (err) {
+    // Provide more detailed error information
+    console.error('Error committing post:', err.message);
+  }
+};
+
+
+
 
   // Define function for deleting posts
   const deletePost = async (postId) => {
@@ -314,7 +346,7 @@ button:hover {
 button.active {
   background-color: #ddd;
 }
-h1{
+h1, p{
   color:white;
   padding: 20px;
 }
