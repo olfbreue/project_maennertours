@@ -63,13 +63,19 @@ Insert code
             Blog link.
           -->
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/BlogView">Blog</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/Shop">Shop</router-link>
           </li>
           <!-- 
             Tour-Tracker link.
           -->
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" to="/TourTracker">Tour-Tracker</router-link>
+          </li>
+          <!-- 
+          Contact-form link.
+          -->
+          <li class="nav-item">
+            <router-link class="nav-link active" aria-current="page" to="/Contact">Contact</router-link>
           </li>
           <!-- 
             Language selection dropdown.

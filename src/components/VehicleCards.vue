@@ -32,5 +32,11 @@ const props = defineProps({
 </script>
 
 <style scoped>
-
+img{
+  margin:20px;
+}
+.card-body{
+  padding-right: 10vh;
+  padding-top: 10%;
+}
 </style>

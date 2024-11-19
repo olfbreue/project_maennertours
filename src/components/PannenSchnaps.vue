@@ -10,8 +10,8 @@
 
   // Import images
   import schnapsImage from '../assets/hebeb-hne.png';
-  import AufkleberImage from '../assets/sticker.png';
-  import KlamottenImage from '../assets/klamotten.png';
+  import AufkleberImage from '../assets/shoplink_roggenroll.png';
+ 
 
   // Initialize i18n instance
   const { t, locale } = useI18n();
@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="col-lg-1"></div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <!-- 
             VehicleCards components for the PannenSchnaps page.
           -->
@@ -78,13 +78,13 @@
             :btntext="btntextShop"
             btnlink="http://www.roggen-roll-shop.de/epages/64652728.sf/de_DE/?ObjectPath=/Shops/64652728/Categories/%22Band%60s%20and%20Friend%60s%22/Maennertours"
           />
-          <VehicleCards
+         <!-- <VehicleCards
             :image='KlamottenImage'
             :title="KlamottenTitle"
             :text="KlamottenShop"
             :btntext="btntextShop"
             btnlink="http://www.roggen-roll-shop.de/epages/64652728.sf/de_DE/?ObjectPath=/Shops/64652728/Categories/%22Band%60s%20and%20Friend%60s%22/Maennertours"
-          />
+          /> -->
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
 .bg-image
 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                    url(../assets/pannenSchnaps1.jpg);
+                    url(../assets/schanps_close.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -120,7 +120,11 @@
   border: 1px solid #727272;
 }
 .col-lg-4{
-  padding-top: 30px;
+  margin-top:20px;
   padding-right: 50px;
+  width: 35%;
+}
+.col-lg-3{
+  margin-top:70px;
 }
 </style>

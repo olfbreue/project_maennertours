@@ -184,7 +184,7 @@ img {
 .col-lg-5 {
  
   width: 30%;
- 
+  margin-top: 85px;
 
 
 }

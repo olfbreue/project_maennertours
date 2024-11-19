@@ -1,13 +1,17 @@
 export default {
   en: {
     message: {
+      ContactText:'You have questions, suggestions or hate speeches? Then contact us here:',
+      ContactHeadline:'Contact us',
+
+      Shoptext: 'Hoodies, T-Shirts and decals can be found in the shop of "Kopfgetriebeöl" and the famous "Pannenschnaps" can be ordered at the "Roggen-Roll Shop". Here are the links:',
       trackerText: 'Whilst on Tour we have very decent trackers with us from one of our sponsors Autoskope. You can track our position and maybe spot us when we are close...',
       FacebookText: 'Everyone has his preferences when it comes to social media. This is why we alwas post in Facebook and Instagram. We personally highly recommend to check both channels, ' +
                     'as the best of the content is the contribution from the Community. And this community is not identical on both channels.',
       KlamottenShop:'Hoodies und T-Shirts gibts hier im Shop',
       KlamottenTitle: 'Hoodies and T-Shirts',
       AufkleberTitle: 'Stickers Decals',
-      AufkleberShop: 'Member of our community? Then you got some nice decals over here :)',
+      AufkleberShop: 'Member of our community? Then you got some nice decals over here, as well as hoodies, t-shirts and other stuff... :)',
       karrenText:'We buy all vehicles as cheap as possible and always manage to somehow' +
                   ' get them back on the road during winter months. We deliberately avoid too much planning ahead and unnecessary professional repairs. The provisional repairs ' +
                   'are the ones lasting the longest anyway...',
@@ -28,8 +32,8 @@ export default {
       pannenSchnapsText: 'Traditions held high... like the "Pannenschnaps". Mandatory procedure with every breakdown. ' +
                         'Meanwhile the Schnaps is mostly sponsored by the community and only the most disgusting Schnapses ' +
                         'make it into the selection for a Tour... The last ride to Barcelona and back was accompanied by 29 "Pannenschnäpse"...', 
-      pannenSchnapsShop: 'Our Pannenschnaps as a delicious shot, as well as other merch ' +
-                        'can be found in our shop :)',
+      pannenSchnapsShop: 'Our Pannenschnaps as a delicious shot can be order following this shop link. ',
+                        
       youTubeCardText: 'On our YouTube channel you will find more than 200 videos from our Tours, their preparation, '+
                         'and a lot of disaster and calls for "Pannenschnaps !"',
 
@@ -37,13 +41,17 @@ export default {
   },
   de: {
     message: {
+      ContactHeadline:'Kontakt zu Männertours',
+
+      ContactText:'Ihr habt Fragen, Anregungen, Hasskommentare? Dann schreibt uns einfach:',
+      Shoptext: 'Hoodies, T-Shirts und Aufkleber gibts im Shop von "Kopfgetriebeöl" und den Pannenschnaps kann man im Roggen-Roll Shop bestellen. Hier sind die Links dazu:',
       trackerText: 'Wenn wir auf Tour sind haben wir immer mehrere Tracker von unserem Sponsor Autoscope live. Ihr könnt uns dann auf der Karte verfolgen und mit etwas Glück seht Ihr uns vielleicht wenn wir in der Nähe sind...',
       FacebookText: 'Jeder hat so seine Social Media-Vorlieben, deshalb posten wir immer auf Facebook und Instagram. Es lohnt sich aber auf jeden Fall Beide Kanäle zu abonnieren, ' +
                     'denn das Beste an den Beiträgen sind die Kommentare der Community. Und die ist eben auf beiden channels nicht identisch.',
       KlamottenShop:'Our hoodies and T-shirt selection',
       KlamottenTitle:'Hoodies & Tshirts',
       AufkleberTitle: 'Stickers',
-      AufkleberShop: 'Aktiv in unserer Community? Dann gibts hier die Sticker :)',
+      AufkleberShop: 'Aktiv in unserer Community? Dann gibts hier die Sticker, Hoodies und co.',
       karrenText:'Alle Fahrzeuge kaufen wir so billig wie möglich und bringen sie über ' +
                   'die Wintermonate irgendwie wieder zum laufen. Zu viel Planung vermeiden wir genauso wie unnötigen Aufwand. Ein Provisorium hält doch meistens am Längsten...',
       instaText:'Auf Insta gibts während der Touren und der Vorbereitungszeit immer Neuigkeiten. Da wir allen Content selber machen und schneiden brauchen wir immer etwas ' +
@@ -62,8 +70,8 @@ export default {
       pannenSchnapsText: 'Tradition verpflichtet... so wie der Pannenschnaps. Eine Pflichtübung bei jeder Panne... ' +
                         'Mittlerweile wird der Pannenschnaps von der Community gestiftet und nur die wirklich ekelhaftesten ' +
                         'Schnäpse kommen in die engere Auswahl für eine Tour... Bei der letzten Tour nach Barcelona und zurück waren es insgesamt 29 Pannenschnäpse...',
-      pannenSchnapsShop: 'Den Pannenschnaps als leckere Variante, sowie weiteres Merch ' +
-                        'gibts im Shop :)',
+      pannenSchnapsShop: 'Den Pannenschnaps als leckere Variante gibts in diesem Shop hier ',
+                        
       youTubeCardText: 'Auf unserem YouTube Kanal gibts mehr als 200 Videos von unseren Touren der letzten Jahre, die Verwandlung von Altmetall in '+
                         'fahrbare Vehikel und jede Menge Pleiten Pech und Pannenschnaps...',
 
