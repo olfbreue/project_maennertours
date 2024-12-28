@@ -6,7 +6,8 @@ import TourTracker from '../views/TourTracker.vue';
 import BlogView from '../views/BlogView.vue';
 import Shop from '../views/Shop.vue';
 import Contact from '../views/Contact.vue';
-import NotFound from "@/views/NotFound.vue"
+import NotFound from "@/views/NotFound.vue";
+import Impressum from "@/views/Impressum.vue"
 
 
 const router = createRouter({
@@ -38,6 +39,11 @@ const router = createRouter({
         path: '/Shop',
         name: 'Shop',
         component: Shop
+      },
+      {
+        path: '/Impressum',
+        name: 'Impressum',
+        component: Impressum
       },
       {
         path: '/Contact',

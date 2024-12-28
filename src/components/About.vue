@@ -36,7 +36,7 @@ watch(locale, () => {
           </div>
         </div>
         <div class="col-lg-1"></div>
-        <div class="col-lg-4 border-light">
+        <div class="col-lg-3 border-light">
           <SimpleCard
             :title="videoTitle"
             :text="videoText"
@@ -73,5 +73,8 @@ watch(locale, () => {
   padding: 60px;
   text-align: center;
   border: 1px solid #727272;
+}
+.card{
+  margin-top:60px;
 }
 </style>

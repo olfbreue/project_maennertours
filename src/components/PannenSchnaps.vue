@@ -51,7 +51,7 @@
           <!-- 
             Header for the PannenSchnaps page.
           -->
-          <h1 class="display-5">{{ pannenHeader }}</h1>
+          <h1 class="display-6">{{ pannenHeader }}</h1>
           <!-- 
             Text for the PannenSchnaps page.
           -->
@@ -78,13 +78,7 @@
             :btntext="btntextShop"
             btnlink="http://www.roggen-roll-shop.de/epages/64652728.sf/de_DE/?ObjectPath=/Shops/64652728/Categories/%22Band%60s%20and%20Friend%60s%22/Maennertours"
           />
-         <!-- <VehicleCards
-            :image='KlamottenImage'
-            :title="KlamottenTitle"
-            :text="KlamottenShop"
-            :btntext="btntextShop"
-            btnlink="http://www.roggen-roll-shop.de/epages/64652728.sf/de_DE/?ObjectPath=/Shops/64652728/Categories/%22Band%60s%20and%20Friend%60s%22/Maennertours"
-          /> -->
+
         </div>
       </div>
     </div>
@@ -111,6 +105,8 @@
   z-index: 1000;
   padding-top: 4%;
   padding-bottom: 4%;
+  justify-content: center;
+
 }
 .fs-4{
   background-color: rgba(0, 0, 0, 0.5);
@@ -120,11 +116,12 @@
   border: 1px solid #727272;
 }
 .col-lg-4{
-  margin-top:20px;
-  padding-right: 50px;
-  width: 35%;
+  margin-top:5%; 
 }
+
 .col-lg-3{
-  margin-top:70px;
+  margin-top:7%;
+  width: auto;
+  height: auto;
 }
 </style>

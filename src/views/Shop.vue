@@ -31,8 +31,8 @@ watch(locale, () => {
 <template>
   <div class="bg-image rounded-3 mt-lg-4">
     <div class="container-fluid">
-      <div class="row" >
-        <div class="col-lg-2"></div>
+      <div class="row d-flex justify-content-center" >
+        
         <div class="col-lg-4" >
           <h1 class="display-6">Online Shops</h1>
           <div class="fs-4">
@@ -40,7 +40,7 @@ watch(locale, () => {
           </div>
         </div>
         <div class="col-lg-1"></div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <VehicleCards
             :image='schnapsImage'
             :title="pannenSchnapsTitle"
@@ -68,7 +68,7 @@ watch(locale, () => {
                     url(../assets/pannenSchnaps1.jpg);
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  
   position: relative;
   border: 1px solid #727272;
   margin:0px 8px 8px 8px;
@@ -95,17 +95,7 @@ watch(locale, () => {
   background-color: #272626e6;
   align-self: auto;
 }
-.instagram-frame {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  overflow: hidden;
-  border: none;
-  border-radius:10px;
-}
 
-.instagram-frame::-webkit-scrollbar {
-  display: none;
-}
 
 .link-opacity-100-hover{
   margin-top: 200px;
@@ -113,5 +103,10 @@ watch(locale, () => {
 
 .btn{
   margin-top:10px;
+}
+.col-lg-3{
+  margin-top:4%;
+  width: auto;
+  height: auto;
 }
 </style>

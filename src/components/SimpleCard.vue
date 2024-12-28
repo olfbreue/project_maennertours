@@ -12,7 +12,7 @@
     <!-- 
       YouTube iframe.
     -->
-    <iframe width="391" height="240" src="https://www.youtube.com/embed/GQaWi69s-MI?si=LFyIpFct_-a9L4Iq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/GQaWi69s-MI?si=LFyIpFct_-a9L4Iq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <!-- 
       Body of the card.
     -->
@@ -54,11 +54,15 @@
 .card{
   border-radius: 10px;
   border: 1px solid #727272;
-  width: 392px;
 
   margin-top: 30px;;
 }
 .card-body{
-  width: 392px;
+  width: auto;
+}
+iframe {
+  aspect-ratio: 16/9; /* or any other aspect ratio you want */
+  width: 100%;
+  height: 100%;
 }
 </style>

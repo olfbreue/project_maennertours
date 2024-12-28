@@ -1,29 +1,3 @@
-
-Vue
-Insert code
-
-<!-- 
-  NavigationBar.vue: Handles navigation and language selection.
--->
-
-<script setup>
-  // Import necessary Vue functions
-  import { useI18n } from 'vue-i18n';
-
-  // Initialize i18n instance
-  const { locale } = useI18n();
-
-  // Define function to change language
-  function changeLanguage(lang) {
-    // Update locale value
-    locale.value = lang;
-    console.log("Language:" + lang);
-  }
-
-  // Set default language to German
-  changeLanguage('de');
-</script>
-
 <template>
   <!-- 
     Navigation bar container.
@@ -45,37 +19,37 @@ Insert code
       <!-- 
         Navigation links.
       -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" ref="navbarRef">
         <ul class="navbar-nav mb- mx- mb-lg-0 ms-auto">
           <!-- 
             Home link.
           -->
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/" @click="collapseNavbar">Home</router-link>
           </li>
           <!-- 
             Social Media link.
           -->
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/SocialMedia">Social Media</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/SocialMedia" @click="collapseNavbar">Social Media</router-link>
           </li>
           <!-- 
             Blog link.
           -->
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/Shop">Shop</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/Shop" @click="collapseNavbar">Shop</router-link>
           </li>
           <!-- 
             Tour-Tracker link.
           -->
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/TourTracker">Tour-Tracker</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/TourTracker" @click="collapseNavbar">Tour-Tracker</router-link>
           </li>
           <!-- 
           Contact-form link.
           -->
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/Contact">Contact</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/Contact" @click="collapseNavbar">Contact</router-link>
           </li>
           <!-- 
             Language selection dropdown.
@@ -111,60 +85,88 @@ Insert code
   </nav>
 </template>
 
+<script setup>
+  // Import necessary Vue functions
+  import { ref } from 'vue';
+  import { useI18n } from 'vue-i18n';
+
+  // Initialize i18n instance
+  const { locale } = useI18n();
+
+  // Define function to change language
+  function changeLanguage(lang) {
+    // Update locale value
+    locale.value = lang;
+    console.log("Language:" + lang);
+  }
+
+  // Set default language to German
+  changeLanguage('de');
+
+  const navbarRef = ref(null);
+
+  function collapseNavbar() {
+    navbarRef.value.classList.remove('show');
+  }
+</script>
+
+
+
+
 <style scoped>
 
-.navbar-toggler-icon{
-  margin-right:10px;
-}
-.navbar-expand-lg-height-5rem {
-  height: 4.5rem;
-  background-image: url("../assets/tarmac.png");
-  border-top: 1px solid #c0c0c0;
-  border-bottom: 1px solid #c0c0c0;
-  padding-top: 10px;
-  padding-left: 8px;
-  padding-right:8px;
-}
-.logo {
-
-  max-height: 160px;
-  max-width: 160px;
-  /*position: relative; */
-
-  margin-right: 30px;
-  z-index: 1000;
-}
-.dropdown-item img {
-  width: 30px;
-  height: 20px;
-  margin-right: 4px;
-}
-@media (max-width: 990px) {
+  .navbar-toggler{
+    margin-right:30px;
+  }
+  .navbar-expand-lg-height-5rem {
+    height: 4.5rem;
+    background-image: url("../assets/tarmac.png");
+    border-top: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-right:8px;
+  }
   .logo {
-    width: 90px;
-    height: auto;
+
+    max-height: 160px;
+    max-width: 160px;
+    /*position: relative; */
+
+    margin-right: 30px;
+    z-index: 1000;
   }
-  .container-fluid{
-    position:absolute;
+  .dropdown-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+  @media (max-width: 990px) {
+    .logo {
+      width: 90px;
+      height: auto;
+    }
+    .container-fluid{
+      position:absolute;
+      
+      height: 100px;
+    }
+  }
+  .nav-item{
     
-    height: 100px;
-  }
-}
-.nav-item{
-  
-  padding-left:10px;
+    padding-left:10px;
  
-}
-.nav-link:hover {
-  color: #6c757d;
-}
-.mb-lg-0{
-  background-image: url("../assets/tarmac.png");
-}
-.router-link-active {
-  color: #f8ffb8 !important;
-}
-.nav-link{
-  color:white;
-}
+  }
+  .nav-link:hover {
+    color: #6c757d;
+  }
+  .mb-lg-0{
+    background-image: url("../assets/tarmac.png");
+  }
+  .router-link-active {
+    color: #c4ab75 !important;
+  }
+  .nav-link{
+    color:white;
+  }
 </style>

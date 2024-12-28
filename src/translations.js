@@ -53,7 +53,7 @@ export default {
       AufkleberTitle: 'Stickers',
       AufkleberShop: 'Aktiv in unserer Community? Dann gibts hier die Sticker, Hoodies und co.',
       karrenText:'Alle Fahrzeuge kaufen wir so billig wie möglich und bringen sie über ' +
-                  'die Wintermonate irgendwie wieder zum laufen. Zu viel Planung vermeiden wir genauso wie unnötigen Aufwand. Ein Provisorium hält doch meistens am Längsten...',
+                  'die Wintermonate irgendwie wieder zum laufen. Zu viel Planung vermeiden wir genauso wie unnötigen Aufwand. Ein Provisorium hält meistens sowieso am Längsten...',
       instaText:'Auf Insta gibts während der Touren und der Vorbereitungszeit immer Neuigkeiten. Da wir allen Content selber machen und schneiden brauchen wir immer etwas ' +
                'Zeit bis so ein Tourvideo fertig ist. Auf Social Media gibts alle updates direkt, noch während der Tour...',
       btntextVideo:'Play',

@@ -37,8 +37,6 @@
           -->
           <iframe
             src="https://www.instagram.com/maennertours/embed"
-            height="470"
-            width="400"
             frameborder="0"
             scrolling="no"
             class="instagram-frame"
@@ -70,6 +68,8 @@
   z-index: 1000;
   padding-top: 4%;
   padding-bottom: 4%;
+  justify-content: center;
+
 }
 .fs-4 {
   background-color: rgba(0, 0, 0, 0.5);
@@ -78,26 +78,26 @@
   text-align: center;
   border: 1px solid #727272;
 }
-.list-group{
-    max-height: 450px;
-    margin-bottom: 10px;
-    overflow:scroll;
-    -webkit-overflow-scrolling: touch;
-}
-.list-group-item{
-  background-color: #272626e6;
-  align-self: auto;
+
+
+
+.instagram-frame::-webkit-scrollbar {
+  display: none;
 }
 .instagram-frame {
+  
+  min-height:450px;
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow: hidden;
   border: none;
   border-radius:10px;
-  margin-left:9vh;
+ margin-top:60px;
+
 }
 
-.instagram-frame::-webkit-scrollbar {
-  display: none;
+.col-lg-3{
+  width: auto;
+  height: auto;
 }
 </style>

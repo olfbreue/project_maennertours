@@ -36,7 +36,6 @@ img{
   margin:20px;
 }
 .card-body{
-  padding-right: 10vh;
-  padding-top: 10%;
+  padding:3%;
 }
 </style>

@@ -26,16 +26,5 @@ watch(locale, () => {
 
 <style scoped>
 
-.row {
-  color: #c0c0c0;
-  z-index: 1000;
-  padding-top: 8%;
-}
-.col-lg-4 {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px 80px 10px 80px;
-  padding: 40px;
-  text-align: center;
-  border: 1px solid #727272;
-}
+
 </style>

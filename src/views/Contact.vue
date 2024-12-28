@@ -71,10 +71,10 @@ watch(locale, () => {
 .bg-image
 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                    url(../assets/alpenWechsel.png);
+                    url(../assets/maenner.JPG);
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 80vh;
   position: relative;
   border: 1px solid #727272;
   margin:0px 8px 8px 8px;
@@ -116,5 +116,8 @@ watch(locale, () => {
 input, #comment{
     background-color: rgba(0, 0, 0, 0.5);
     color:#c0c0c0;
+}
+.col-lg-4{
+    margin-top:5%;
 }
 </style>

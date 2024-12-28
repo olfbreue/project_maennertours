@@ -22,7 +22,7 @@ watch(locale, () => {
   <!-- 
     Container with a background image.
   -->
-  <div class="bg-image rounded-3">
+  <div class="bg-image rounded-3 mt-lg-4">
     <!-- 
       Container for the content.
     -->
@@ -38,7 +38,7 @@ watch(locale, () => {
           <!-- 
             Header text.
           -->
-          <h1 class="display-5">{{ vehiclesHeader }}</h1>
+          <h1 class="display-6">{{ vehiclesHeader }}</h1>
           <!-- 
             Text with a background color and padding.
           -->
@@ -142,11 +142,7 @@ watch(locale, () => {
 
 }
 
-.container-fluid {
-  padding: 10px;
-    margin-bottom:0px !important;
 
-}
 
 .fs-4 {
   background-color: rgba(0, 0, 0, 0.5);
@@ -156,9 +152,8 @@ watch(locale, () => {
   border: 1px solid #727272;
 }
 
-img {
-  width: 625px;
-  height: 360px;
+.img-frame {
+
   border-radius: 10px 10px 10px 10px;
 }
 
@@ -167,23 +162,27 @@ img {
   z-index: 1000;
   padding-top: 4%;
   padding-bottom: 4%;
-  display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .carousel {
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px 10px 10px 10px;
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #727272;
-  width: 620px;
-  height: 380px;
+border-radius: 10px 10px 10px 10px;
+padding: 10px;
+justify-content: center;
+border: 1px solid #727272;
+
+max-width: 620px;
+max-height: 625px;
+}
+.carousel-inner{
+  padding-bottom: 10px;
 }
 
 .col-lg-5 {
- 
-  width: 30%;
+  width: auto;
+  height: auto;
+  
   margin-top: 85px;
 
 

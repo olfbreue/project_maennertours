@@ -32,7 +32,7 @@
         <!-- Column for the YouTube card -->
         <div class="col-lg-4">
           <!-- YouTube card title -->
-          <h1 class="display-5">YouTube</h1>
+          <h1 class="display-6">YouTube</h1>
           <!-- YouTube card text -->
           <div class="fs-4">
             {{ youTubeCardText }}
@@ -41,17 +41,16 @@
         <!-- Empty column for spacing -->
         <div class="col-lg-1"></div>
         <!-- Column for the YouTube video list -->
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <!-- List group for the YouTube videos -->
           <ul class="list-group overflow-auto">
             <!-- Loop through the YouTube videos and display each one -->
             <li v-for="index in 12" :key="index" class="list-group-item">
               <!-- YouTube video iframe -->
               <iframe
-                width="412"
-                height="225"
                 :src="`https://www.youtube.com/embed?listType=playlist&list=PL_u1YUflUcHZwdUQsTEtUtziSBu4toNYm&index=${index}`"
                 title="YouTube video player"
+                width="320" height="225"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -98,20 +97,26 @@
   /* List group styles for the YouTube page */
   .list-group {
     max-height: 450px;
-    margin-bottom: 10px;
+    margin-top: 60px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
-    margin-left: 7%;
+    border: 1px solid #727272;
   }
 
   /* List group item styles for the YouTube page */
   .list-group-item {
     background-color: #272626e6;
-    align-self: auto;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+
   }
 
-  /* List group width for the YouTube page */
-  .list-group {
-    width: 455px;
-  }
+.col-lg-3{
+
+  overflow: hidden; /* to ensure rounded corners are visible if content overflows */
+
+}
 </style>
