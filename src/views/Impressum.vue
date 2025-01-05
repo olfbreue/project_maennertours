@@ -27,7 +27,8 @@ watch(locale, () => {
 
 Anschrift:<br><br>
 Männertours e.V.<br>
-Carrer Rubio I Ors 25<br>
+c/o. SzeneKonzept<br>
+Carrer Rubio I Ors 25 (Tienda)<br>
 08940 Cornella de Llobregat<br>
 Spain<br><br>
 
